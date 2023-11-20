@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-Resumo.css">
+    <script src="script-Resumo.js"></script>
+</head>
+
+<body>
+    <section>
+        <img src="../../img-Index/LOGOLIDERACAI.jpeg" alt="" class="LOGO">
+        <h1>DETALHAMENTO COMPRA</h1>
+        <!-- Elementos para exibir os dados -->
+        <div id="produtoInfo"></div>
+        <div id="escolhasInfo"></div>
+        <div id="gastoGeral"></div>
+        <p>--------------------------------------------------------</p>
+               <div class="formulario">
+            <br><br>
+            <label for="pagamento"><strong>FORMA DE PAGAMENTO:</strong></label>
+
+            <input type="radio" name="pagamento" id="pix" value="PIX">
+            <label for="" class="labelPag">PIX</label>
+
+            <input type="radio" name="pagamento" id="dinheiro" value="DINHEIRO">
+            <label for="" class="labelPag">DINHEIRO</label>
+
+            <input type="radio" name="pagamento" id="dinheiroCartao" value="DINHEIRO CARTÃO">
+            <label for="" class="labelPag">DINHEIRO CARTÃO</label>
+
+            <input type="radio" name="pagamento" id="cartaoCredito" value="CARTÃO DE CRÉDITO">
+            <label for="" class="labelPag">CARTÃO DE CRÉDITO</label>
+        </div>
+
+        <div id="trocoSection" style="display: none;">
+            <label for="valorTroco"><strong>Troco para quanto? (R$):</strong></label>
+            <input type="text" id="valorTroco" name="valorTroco" placeholder="Informe se precisa de troco e para quanto">
+        </div>
+        <div id="produtoEndereco"></div>
+
+        <button class="acompanhamento" id="enviarZAPZAP" onclick="enviarMensagemWhatsApp()">CONCLUIR</button>
+
+    </section>
+</body>
+
+</html>

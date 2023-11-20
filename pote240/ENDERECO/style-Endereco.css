@@ -1,0 +1,125 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    height: 1200px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.CaixasAcompanhamentos {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 430px;
+
+}
+
+.estruturaCheckBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    margin-top: -15px;
+}
+
+.checkbox-container {
+    width: 300px;
+    padding-left: 10px;
+    padding: 5px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+    box-shadow: 1px 1px 10px rgba(128, 0, 128, 0.678);
+}
+
+.checkbox-container label {
+    margin-left: 20px;
+    /* Ajuste a margem conforme necessário */
+}
+
+.tituloA {
+    margin-top: 10px;
+    margin-bottom: -15px;
+    text-align: center;
+}
+
+.tituloCabecalho {
+    text-align: center;
+}
+
+.tituloeNDEREÇO{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.estruturaCheckBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botaoAcomp{
+    margin-left: 110px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: rgba(137, 43, 226, 0.699);
+    height: 50px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow: 1px 2px 20px; 
+    border: green;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(39, 252, 6);
+    transition: .5s;
+}
+
+.LOGO {
+    margin-bottom: 30px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate; 
+
+}
+
+@keyframes flutuar{
+    0%{
+           top: 0px;
+    }
+     100%{
+           top: 30px;
+     }
+}
+
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.endereco{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.labelPag{
+    margin: auto;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Produto</title>
+    <link rel="stylesheet" href="styleIndex.css">
+    <script src="Script-MudarPagina/script-MudarPagina.js" defer></script>
+
+  
+</head>
+
+<body>
+    <div id="teste"></div>
+    <main>
+        <img src="img-Index/LOGOLIDERACAI.jpeg" alt="" class="LOGO">
+        <h1 class="titulo">MONTE SEU SUPER COPO:</h1>
+        <section class="TodosProdutos1">
+
+            <div class="Produtos">
+                <h3>COPO 300ml <br>R$ 13,50</h3>
+                <label for="produto01"></label>
+                <img src="img-Index/copo300ml.jpeg" alt="" class="imagem">
+                <input type="radio" name="produtos" id="copo300" data-text="COPO 300ml - R$: " value="13.50">
+            </div>
+
+            <div class="Produtos">
+                <h3>COPO 500ml <br>R$ 20,50</h3>
+                <label for="produto02"></label>
+                <img src="img-Index/copo500ml.jpeg" alt="" class="imagem">
+                <input type="radio" name="produtos" id="copo500" data-text="COPO 500ml - R$" value="20.50">
+            </div>
+        </section>
+
+        <h1 class="titulo">MONTE SEU POTE:</h1>
+
+        <section class="TodosProdutos1">
+
+            <div class="Produtos">
+                <label for="produto03">
+                    <h3>POTE 240ml <br>R$ 10,90</h3>
+                </label>
+                <img src="img-Index/pote240ml.jpeg" alt="" class="imagem">
+                <input type="radio" name="produtos" id="pote240" data-text="POTE 240ml - R$" value="10.90">
+            </div>
+
+            <div class="Produtos">
+                <label for="produto04">
+                    <h3>POTE 360ml <br>R$ 15,50</h3>
+                </label>
+                <img src="img-Index/pote360ml.jpeg" alt="" class="imagem">
+                <input type="radio" name="produtos" id="pote360" data-text="POTE 360ml - R$" value="15.50">
+            </div>
+
+            <div class="Produtos">
+                <label for="produto05">
+                    <h3>POTE 480ml <br>R$ 18,50</h3>
+                </label>
+                <img src="img-Index/pote480ml.jpeg" alt="" class="imagem">
+                <input type="radio" name="produtos" id="pote480" data-text="POTE 480ml - R$" value="18.50">
+            </div>
+
+            <div class="Produtos">
+                <label for="produto06">
+                    <h3>MARMITA 500ml <br>R$ 22,90</h3>
+                </label>
+                <img src="img-Index/marmita500ml.jpeg" alt="" class="imagem">
+                <input type="radio" name="produtos" id="marmita500" data-text="MARMITA 500ml - R$" value="22.90">
+            </div>
+            <button onclick="selecionarProduto()" class="acompanhamento">AVANÇAR >></button>
+        </section>
+    </main>
+</body>
+
+</html>

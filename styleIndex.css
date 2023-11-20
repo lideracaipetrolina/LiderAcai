@@ -1,0 +1,101 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+/*Altera todas as caixas de produtos*/
+.TodosProdutos1 {
+
+    display: flex;
+    width: 450px;
+    max-width: 550px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+
+}
+
+/*Altera dentro da caixa de produto*/
+.Produtos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 200px;
+    height: 250px;
+}
+
+.imagem {
+    width: 180px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+/*letras*/
+.titulo {
+    text-align: center;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*logo*/
+.LOGO {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate; 
+
+}
+
+@keyframes flutuar{
+    0%{
+           top: 0px;
+    }
+     100%{
+           top: 30px;
+     }
+}
+
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Botão*/
+.acompanhamento{
+    background-color: rgba(137, 43, 226, 0.699);
+    height: 50px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow: 1px 2px 20px; 
+   border: green;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(39, 252, 6);
+    transition: .5s;
+}
+
+.acompanhamento:hover{
+    color: green;
+}
