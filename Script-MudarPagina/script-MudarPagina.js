@@ -15,7 +15,7 @@ function selecionarProduto() {
 
         // Cria condições para cada ID existente
         if (produtoSelecionado.id === "copo300") {
-            window.location.href = "../copo300/ACOMPANHAMENTO/pagina-Acompanhamento.html";
+            window.location.href = "/copo300/ACOMPANHAMENTO/pagina-Acompanhamento.html";
         }
         else if (produtoSelecionado.id === "copo500") {
             window.location.href = "../copo500/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
