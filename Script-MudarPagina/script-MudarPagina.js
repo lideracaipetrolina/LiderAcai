@@ -24,7 +24,7 @@ function selecionarProduto() {
             window.location.href = "/copo300/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
         }
         else if (produtoSelecionado.id === "pote360") {
-            window.location.href = "/LiderAcai/pote360/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
+            window.location.href = "/LiderAcai/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
         }
         else if (produtoSelecionado.id === "pote480") {
             window.location.href = "/LiderAcai/pote480/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
