@@ -21,16 +21,16 @@ function selecionarProduto() {
             window.location.href = "../../LiderAcai/copo500/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
         }
         else if (produtoSelecionado.id === "pote240") {
-            window.location.href = "../../LiderAcai/pote240/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
+            window.location.href = "../pote240/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
         }
         else if (produtoSelecionado.id === "pote360") {
-            window.location.href = "../../LiderAcai/pote360/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
+            window.location.href = ""; // Insira o caminho da página desejada
         }
         else if (produtoSelecionado.id === "pote480") {
-            window.location.href = "../../LiderAcai/pote480/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
+            window.location.href = ""; // Insira o caminho da página desejada
         }
         else if (produtoSelecionado.id === "marmita500") {
-            window.location.href = "../../LiderAcai/marmita500/ACOMPANHAMENTO/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
+            window.location.href = ""; // Insira o caminho da página desejada
         }
         else {
             alert("ID do produto não reconhecido");
