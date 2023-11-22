@@ -62,14 +62,14 @@ function concluirPedido() {
         return false;
     }
 
-    if (
-        escolhaCobertura.length === 0 ||
-        escolhaFrutas.length === 0 ||
-        escolhaComplementos.length === 0
-    ) {
-        alert("Por favor, escolha ao menos uma seleção em cada categoria -> COBERTURA/FRUTAS/COMPLEMENTO.");
-        return false;
-    }
+   // if (
+    //     escolhaCobertura.length === 0 ||
+    //     escolhaFrutas.length === 0 ||
+    //     escolhaComplementos.length === 0
+    // ) {
+    //     alert("Por favor, escolha ao menos uma seleção em cada categoria -> COBERTURA/FRUTAS/COMPLEMENTO.");
+    //     return false;
+    // }
 
     // Armazenar no sessionStorage
     sessionStorage.setItem('escolhaCobertura', JSON.stringify(escolhaCobertura));
