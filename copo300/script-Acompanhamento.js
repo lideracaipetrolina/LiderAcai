@@ -78,5 +78,5 @@ function concluirPedido() {
     sessionStorage.setItem('escolhaExtras', JSON.stringify(escolhaExtras));
 
     // Redirecionar para a próxima página
-    window.location.href = '/Lider-Acai/aENDERECO/pagina-Endereco.html';
+    window.location.href = '/LiderAcai/aENDERECO/pagina-Endereco.html';
 }
