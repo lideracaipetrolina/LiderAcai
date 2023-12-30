@@ -5,7 +5,7 @@ const FormEnd = () => {
     let cep = document.getElementById('cep').value;
     let cidade = document.getElementById('cidade').value;
     let bairro = document.getElementById('bairro').value;
-    let referencia  = document.getElementById('referencia').value;
+    let referencia = document.getElementById('referencia').value;
 
     if (nomeRua && numeroCasa && cep && cidade && bairro && referencia) {
         let endereco = {
@@ -26,3 +26,31 @@ const FormEnd = () => {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    let Retiradas = document.getElementsByName('entrega');
+    for (var i = 0; i < Retiradas.length; i++) {
+        Retiradas[i].addEventListener('click', naoRetirar);
+    }
+
+    // Chama a função diretamente para verificar o estado inicial
+    naoRetirar();
+
+    function naoRetirar() {
+        let escolhaEntrega = document.querySelector('input[name="entrega"]:checked');
+        if (escolhaEntrega) {
+            let NaoEntregar = document.querySelector('#myForm');
+
+            if (escolhaEntrega.value === 'NÃO') { // Modificado para 'NÃO'
+                NaoEntregar.style.display = 'block';
+                sessionStorage.setItem('dadoRetirada', Retiradas);
+            } else {
+                NaoEntregar.style.display = 'none';
+                sessionStorage.setItem('dadoRetirada', Retiradas);
+            }
+        }
+    }
+
+ 
+    sessionStorage.setItem('dadoRetirada', Retiradas);
+    window.location.href = '../../LiderAcai/aRESUMO/pagina-Resumo.html';
+});
