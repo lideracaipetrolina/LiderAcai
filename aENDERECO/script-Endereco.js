@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (escolhaEntrega.value === 'NÃO') { // Modificado para 'NÃO'
                 NaoEntregar.style.display = 'block';
-                sessionStorage.setItem('dadoRetirada', Retiradas);
+                //sessionStorage.setItem('dadoRetirada', Retiradas);
             } else {
                 NaoEntregar.style.display = 'none';
-                sessionStorage.setItem('dadoRetirada', Retiradas);
+                //sessionStorage.setItem('dadoRetirada', Retiradas);
             }
         }
     }
