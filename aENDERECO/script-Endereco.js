@@ -40,12 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
         let escolhaEntrega = document.querySelector('input[name="entrega"]:checked');
         if (escolhaEntrega) {
             let NaoEntregar = document.querySelector('#myForm');
+            let botao = document.querySelector(".botano")
 
             if (escolhaEntrega.value === 'NÃO') {
                 NaoEntregar.style.display = 'block';
+                botao.style.display = 'none';
                 localStorage.setItem('escolhaEntrega', escolhaEntrega.value);
             } else {
                 NaoEntregar.style.display = 'none';
+                botao.style.display = 'block';
                 localStorage.setItem('escolhaEntrega', escolhaEntrega.value);
             }
         }
