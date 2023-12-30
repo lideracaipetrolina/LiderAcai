@@ -28,6 +28,7 @@ const FormEnd = () => {
 
 document.addEventListener('DOMContentLoaded', function () {
     let Retiradas = document.getElementsByName('entrega');
+
     for (var i = 0; i < Retiradas.length; i++) {
         Retiradas[i].addEventListener('click', naoRetirar);
     }
@@ -40,17 +41,28 @@ document.addEventListener('DOMContentLoaded', function () {
         if (escolhaEntrega) {
             let NaoEntregar = document.querySelector('#myForm');
 
-            if (escolhaEntrega.value === 'NÃO') { // Modificado para 'NÃO'
+            if (escolhaEntrega.value === 'NÃO') {
                 NaoEntregar.style.display = 'block';
-                //sessionStorage.setItem('dadoRetirada', Retiradas);
+                localStorage.setItem('escolhaEntrega', escolhaEntrega.value);
             } else {
                 NaoEntregar.style.display = 'none';
-                //sessionStorage.setItem('dadoRetirada', Retiradas);
+                localStorage.setItem('escolhaEntrega', escolhaEntrega.value);
             }
         }
     }
 
- 
-    sessionStorage.setItem('dadoRetirada', Retiradas);
-    window.location.href = '../../LiderAcai/aRESUMO/pagina-Resumo.html';
+    // Verifica se há uma escolha armazenada e marca o botão correspondente
+    let escolhaArmazenada = localStorage.getItem('escolhaEntrega');
+    if (escolhaArmazenada) {
+        let radioEscolhido = document.getElementById(escolhaArmazenada);
+        if (radioEscolhido) {
+            radioEscolhido.checked = true;
+            let NaoEntregar = document.querySelector('#myForm');
+            if (escolhaArmazenada === 'NÃO') {
+                NaoEntregar.style.display = 'block';
+            } else {
+                NaoEntregar.style.display = 'none';
+            }
+        }
+    }
 });
