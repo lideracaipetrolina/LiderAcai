@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Exibir ENDEREÇO----------------------------------------------------
-  document.getElementById('referencia').innerHTML = `${retiradaProduto}`
+  document.getElementById('referencia').innerHTML = `RETIRADA NO LOCAL: ${retiradaProduto}`
   document.getElementById('produtoEndereco').innerHTML = `
   --------------------------------------------------------
   <br><span style="font-weight: bold;">ENDEREÇO</span>
