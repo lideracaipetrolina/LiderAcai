@@ -75,33 +75,30 @@ document.addEventListener('DOMContentLoaded', function () {
   <br><span style="font-weight: bold;">Cidade:</span> ${endereco.cidade}
   <br><span style="font-weight: bold;">Bairro:</span> ${endereco.bairro}
   <br><span style="font-weight: bold;">Ponto de Referência:</span> ${endereco.referencia}
-  
-  `;
+    `;
 
+    var formasPagamento = document.getElementsByName('pagamento');
+    for (var i = 0; i < formasPagamento.length; i++) {
+      formasPagamento[i].addEventListener('change', mostrarTroco);
+    }
+  
+    function mostrarTroco() {
+      var escolhaPagamento = document.querySelector('input[name="pagamento"]:checked').value;
+      var trocoSection = document.getElementById('trocoSection');
+  
+      if (escolhaPagamento === 'DINHEIRO') {
+        trocoSection.style.display = 'block';
+      } else {
+        trocoSection.style.display = 'none';
+      }
+    }
+  
 });
 //DIVISÃO DAS DUAS FUNÇÕES--------------------------------------------------
 
 
 //FORMA DE PAGAMENTO
-document.addEventListener('DOMContentLoaded', function () {
-  var formasPagamento = document.getElementsByName('pagamento');
-  for (var i = 0; i < formasPagamento.length; i++) {
-    formasPagamento[i].addEventListener('change', mostrarTroco);
-  }
-
-  function mostrarTroco() {
-    var escolhaPagamento = document.querySelector('input[name="pagamento"]:checked').value;
-    var trocoSection = document.getElementById('trocoSection');
-
-    if (escolhaPagamento === 'DINHEIRO') {
-      trocoSection.style.display = 'block';
-    } else {
-      trocoSection.style.display = 'none';
-    }
-  }
-});
-
-
+ 
 
 //ENVIAR ZAP----------------------------------------------
 function enviarMensagemWhatsApp() {
