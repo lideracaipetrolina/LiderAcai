@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const escolhaComplementos = JSON.parse(sessionStorage.getItem('escolhaComplementos')) || [];
   const escolhaExtras = JSON.parse(sessionStorage.getItem('escolhaExtras')) || [];
   const endereco = JSON.parse(sessionStorage.getItem('endereco')) || {};
-
+  const retiradaProduto = sessionStorage.getItem('escolhaEntrega')
   // Exibir PRODUTO--------------------------------------------------
   document.getElementById('produtoInfo').innerHTML = `
     <br><span style="font-weight: bold;">TAMANHO</span>
@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Exibir ENDEREÇO----------------------------------------------------
+  document.getElementById('referencia').innerHTML = `${retiradaProduto}`
   document.getElementById('produtoEndereco').innerHTML = `
   --------------------------------------------------------
   <br><span style="font-weight: bold;">ENDEREÇO</span>
@@ -76,11 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
   `;
 
 });
-
-
-
-
-
 //DIVISÃO DAS DUAS FUNÇÕES--------------------------------------------------
 
 

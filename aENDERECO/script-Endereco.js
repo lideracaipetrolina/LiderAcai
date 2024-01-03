@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (escolhaEntrega.value === 'NÃO') {
                 NaoEntregar.style.display = 'block';
                 botao.style.display = 'none';
-                localStorage.setItem('escolhaEntrega', escolhaEntrega.value);
+                sessionStorage.setItem('escolhaEntrega', escolhaEntrega.value);
             } else {
                 NaoEntregar.style.display = 'none';
                 botao.style.display = 'block';
-                localStorage.setItem('escolhaEntrega', escolhaEntrega.value);
+                sessionStorage.setItem('escolhaEntrega', escolhaEntrega.value);
                 limparFormulario();
             }
         }
