@@ -135,7 +135,8 @@ ${retiradaProduto}
     const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
     window.open(linkWhatsApp, '_blank');
   }
-
-  enviarMensagemWhatsApp()
+  
+  let botaoRetirada = document.querySelector("#enviarZap")
+  botaoRetirada.addEventListener("click", enviarMensagemWhatsApp())
 });
 //
