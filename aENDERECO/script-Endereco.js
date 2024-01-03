@@ -26,6 +26,9 @@ const FormEnd = () => {
     }
 }
 
+
+//----------------------------------------------------------------------------
+
 document.addEventListener('DOMContentLoaded', function () {
     let Retiradas = document.getElementsByName('entrega');
 
@@ -33,8 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
         Retiradas[i].addEventListener('click', naoRetirar);
     }
 
-    // Chama a função diretamente para verificar o estado inicial
-    naoRetirar();
+    function limparFormulario() {
+        document.getElementById('nomeRua').value = '';
+        document.getElementById('numeroCasa').value = '';
+        document.getElementById('cep').value = '';
+        document.getElementById('cidade').value = '';
+        document.getElementById('bairro').value = '';
+        document.getElementById('referencia').value = '';
+    }
 
     function naoRetirar() {
         let escolhaEntrega = document.querySelector('input[name="entrega"]:checked');
@@ -50,22 +59,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 NaoEntregar.style.display = 'none';
                 botao.style.display = 'block';
                 localStorage.setItem('escolhaEntrega', escolhaEntrega.value);
+                limparFormulario();
             }
         }
     }
 
-    // Verifica se há uma escolha armazenada e marca o botão correspondente
-    let escolhaArmazenada = localStorage.getItem('escolhaEntrega');
-    if (escolhaArmazenada) {
-        let radioEscolhido = document.getElementById(escolhaArmazenada);
-        if (radioEscolhido) {
-            radioEscolhido.checked = true;
-            let NaoEntregar = document.querySelector('#myForm');
-            if (escolhaArmazenada === 'NÃO') {
-                NaoEntregar.style.display = 'block';
-            } else {
-                NaoEntregar.style.display = 'none';
-            }
-        }
-    }
+    let botaoRetirada = document.querySelector("#botaoRetirada")
+    botaoRetirada.addEventListener("click", naoRetirar = () => {
+        window.location.href = '../../LiderAcai/aRESUMO/pagina-Resumo.html';
+    })
 });
