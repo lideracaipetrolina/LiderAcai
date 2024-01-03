@@ -186,7 +186,7 @@ ${retiradaProduto}
 *CEP:* ${endereco.cep}
 *Cidade:* ${endereco.cidade}
 *Bairro:* ${endereco.bairro}
-Ponto de Referência:${endereco.referencia}
+*Ponto de Referência:* ${endereco.referencia}
 `;
 
   const codigoPais = '55';
