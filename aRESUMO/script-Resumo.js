@@ -63,9 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Exibir ENDEREÇO----------------------------------------------------
-  document.getElementById('retirada').innerHTML = `RETIRADA NO LOCAL: ${retiradaProduto}`
-  document.getElementById('produtoEndereco').innerHTML = `
+  document.getElementById('retirada').innerHTML = `
   --------------------------------------------------------
+  <br><span style="font-weight: bold;">RETIRADA NO LOCAL:</span> ${retiradaProduto}`
+
+  document.getElementById('produtoEndereco').innerHTML = `
   <br><span style="font-weight: bold;">ENDEREÇO</span>
   <br><span style="font-weight: bold;">Nome da Rua:</span> ${endereco.nomeRua}
   <br><span style="font-weight: bold;">Número da Casa/AP:</span> ${endereco.numeroCasa}
