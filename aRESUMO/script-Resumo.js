@@ -175,10 +175,8 @@ function enviarMensagemWhatsApp() {
 ${document.querySelector('input[name="pagamento"]:checked').value}
 ${document.querySelector('input[name="pagamento"]:checked').value === 'DINHEIRO' && document.getElementById('valorTroco').value.trim() !== '' ? '\n*VALOR DE TROCO (R$)*\n' + document.getElementById('valorTroco').value : ''}
 
-
 \n*RETIRADA NO LOCAL*
 ${retiradaProduto}
-
 
 \n*ENDEREÇO PARA ENTREGA*
 *Nome da Rua:* ${endereco.nomeRua}
