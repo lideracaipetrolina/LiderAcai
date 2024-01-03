@@ -111,7 +111,7 @@ function enviarMensagemWhatsApp() {
   const escolhaComplementos = JSON.parse(sessionStorage.getItem('escolhaComplementos')) || [];
   const escolhaExtras = JSON.parse(sessionStorage.getItem('escolhaExtras')) || [];
   const endereco = JSON.parse(sessionStorage.getItem('endereco')) || {};
-
+  const retiradaProduto = sessionStorage.getItem('escolhaEntrega')
   //ACOMPANHAMENTO----------------------------------------------------------------------------------
   function formatarObjetoParaString(objeto) {
     return Array.isArray(objeto) ? formatarEscolhas(objeto) : JSON.stringify(objeto, null, 2);
@@ -172,6 +172,11 @@ function enviarMensagemWhatsApp() {
 \n*FORMA DE PAGAMENTO*
 ${document.querySelector('input[name="pagamento"]:checked').value}
 ${document.querySelector('input[name="pagamento"]:checked').value === 'DINHEIRO' && document.getElementById('valorTroco').value.trim() !== '' ? '\n*VALOR DE TROCO (R$)*\n' + document.getElementById('valorTroco').value : ''}
+
+
+\n*RETIRADA NO LOCAL*
+${retiradaProduto}
+
 
 \n*ENDEREÇO PARA ENTREGA*
 *Nome da Rua:* ${endereco.nomeRua}
