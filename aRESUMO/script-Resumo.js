@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   //ENVIAR ZAP----------------------------------------------
-  enviarMensagemWhatsApp()
   function enviarMensagemWhatsApp() {
     // Constrói o texto a ser enviado
     const textoParaEnviar = `
@@ -135,4 +134,6 @@ ${retiradaProduto}
     const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
     window.open(linkWhatsApp, '_blank');
   }
+
+  enviarMensagemWhatsApp()
 });
