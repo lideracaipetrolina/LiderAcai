@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}
 `;
 
-
   // Exibir ENDEREÇO----------------------------------------------------
   document.getElementById('retirada').innerHTML = `
   --------------------------------------------------------
@@ -77,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <br><span style="font-weight: bold;">Ponto de Referência:</span> ${endereco.referencia}
     `;
 
+  //FORMA DE PAGAMENTO
   var formasPagamento = document.getElementsByName('pagamento');
   for (var i = 0; i < formasPagamento.length; i++) {
     formasPagamento[i].addEventListener('change', mostrarTroco);
@@ -92,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
       trocoSection.style.display = 'none';
     }
   }
+
+
   //ENVIAR ZAP----------------------------------------------
   function enviarMensagemWhatsApp() {
     // Constrói o texto a ser enviado
@@ -130,13 +132,12 @@ ${retiradaProduto}
 `;
 
     const codigoPais = '55';
-   // const numeroTelefone = '8791793828';
+    // const numeroTelefone = '8791793828';
     const numeroTelefone = '87991614277';
     const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
     window.open(linkWhatsApp, '_blank');
   }
-  
+
   let botaoRetirada = document.querySelector("#enviarZap")
-  botaoRetirada.addEventListener("click", enviarMensagemWhatsApp())
+  botaoRetirada.addEventListener("click", enviarMensagemWhatsApp)
 });
-//
