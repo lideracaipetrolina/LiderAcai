@@ -66,7 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
   --------------------------------------------------------
   <br><span style="font-weight: bold;">RETIRADA NO LOCAL:</span> ${retiradaProduto}`
 
-  document.getElementById('produtoEndereco').innerHTML = `
+  if (Object.keys(endereco).length === 0) {
+    document.getElementById('produtoEndereco').innerHTML = '';
+  } else {
+    document.getElementById('produtoEndereco').innerHTML = `
   <br><span style="font-weight: bold;">ENDEREÇO</span>
   <br><span style="font-weight: bold;">Nome da Rua:</span> ${endereco.nomeRua}
   <br><span style="font-weight: bold;">Número da Casa/AP:</span> ${endereco.numeroCasa}
@@ -75,16 +78,16 @@ document.addEventListener('DOMContentLoaded', function () {
   <br><span style="font-weight: bold;">Bairro:</span> ${endereco.bairro}
   <br><span style="font-weight: bold;">Ponto de Referência:</span> ${endereco.referencia}
     `;
-
+  }
   //FORMA DE PAGAMENTO
-  var formasPagamento = document.getElementsByName('pagamento');
-  for (var i = 0; i < formasPagamento.length; i++) {
+  let formasPagamento = document.getElementsByName('pagamento');
+  for (let i = 0; i < formasPagamento.length; i++) {
     formasPagamento[i].addEventListener('change', mostrarTroco);
   }
 
   function mostrarTroco() {
-    var escolhaPagamento = document.querySelector('input[name="pagamento"]:checked').value;
-    var trocoSection = document.getElementById('trocoSection');
+    let escolhaPagamento = document.querySelector('input[name="pagamento"]:checked').value;
+    let trocoSection = document.getElementById('trocoSection');
 
     if (escolhaPagamento === 'DINHEIRO') {
       trocoSection.style.display = 'block';
@@ -94,49 +97,68 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
+
   //ENVIAR ZAP----------------------------------------------
   function enviarMensagemWhatsApp() {
     // Constrói o texto a ser enviado
+    const formaPagamentoSelecionada = document.querySelector('input[name="pagamento"]:checked');
+    if (!formaPagamentoSelecionada) { //emite um alert caso nenhuma forma de pagamento seja escolhida
+      alert("Por favor! Escolha uma forma de pagamento!");
+      return;
+    }
+
+    // Verifica se o endereço foi preenchido
+    const enderecoPreenchido = (endereco.nomeRua || endereco.numeroCasa || endereco.cep || endereco.cidade || endereco.bairro || endereco.referencia);
+
+    let enderecoTexto = '';
+    if (enderecoPreenchido) {
+      enderecoTexto = `
+               \n*ENDEREÇO PARA ENTREGA*
+               *Nome da Rua:* ${endereco.nomeRua || 'Não fornecido'}
+               *Número da Casa/AP:* ${endereco.numeroCasa || 'Não fornecido'}
+               *CEP:* ${endereco.cep || 'Não fornecido'}
+               *Cidade:* ${endereco.cidade || 'Não fornecido'}
+               *Bairro:* ${endereco.bairro || 'Não fornecido'}
+               *Ponto de Referência:* ${endereco.referencia || 'Não fornecido'}
+           `;
+    }
+
     const textoParaEnviar = `
-*TAMANHO*
-*Produto:* ${dataText} - Valor: ${valorProduto}
-
-\n*ACOMPANHAMENTO*
-\n*COBERTURA:* \n${formatarObjetoParaString(escolhaCobertura)}
-\n*FRUTAS:* \n${formatarObjetoParaString(escolhaFrutas)}
-\n*COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
-\n*EXTRAS:* \n${formatarObjetoParaString(escolhaExtras)}
-
-\n*TOTAL À PAGAR (R$)*
-*Tamanho R$:* ${valorProduto}
-*Cobertura R$:* ${somaCobertura.toFixed(2)}
-*Frutas R$:* ${somaFrutas.toFixed(2)}
-*Complementos R$: ${somaComplementos.toFixed(2)}
-*Extras R$:* ${somaExtras.toFixed(2)}
-*VALOR TOTAL R$:* ${somaTotal.toFixed(2)}
-
-\n*FORMA DE PAGAMENTO*
-${document.querySelector('input[name="pagamento"]:checked').value}
-${document.querySelector('input[name="pagamento"]:checked').value === 'DINHEIRO' && document.getElementById('valorTroco').value.trim() !== '' ? '\n*VALOR DE TROCO (R$)*\n' + document.getElementById('valorTroco').value : ''}
-
-\n*RETIRADA NO LOCAL*
-${retiradaProduto}
-
-\n*ENDEREÇO PARA ENTREGA*
-*Nome da Rua:* ${endereco.nomeRua}
-*Número da Casa/AP:* ${endereco.numeroCasa}
-*CEP:* ${endereco.cep}
-*Cidade:* ${endereco.cidade}
-*Bairro:* ${endereco.bairro}
-*Ponto de Referência:* ${endereco.referencia}
-`;
+           *TAMANHO*
+           *Produto:* ${dataText} - Valor: ${valorProduto}
+   
+           \n*ACOMPANHAMENTO*
+           \n*COBERTURA:* \n${formatarObjetoParaString(escolhaCobertura)}
+           \n*FRUTAS:* \n${formatarObjetoParaString(escolhaFrutas)}
+           \n*COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
+           \n*EXTRAS:* \n${formatarObjetoParaString(escolhaExtras)}
+   
+           \n*TOTAL À PAGAR (R$)*
+           *Tamanho R$:* ${valorProduto}
+           *Cobertura R$:* ${somaCobertura.toFixed(2)}
+           *Frutas R$:* ${somaFrutas.toFixed(2)}
+           *Complementos R$: ${somaComplementos.toFixed(2)}
+           *Extras R$:* ${somaExtras.toFixed(2)}
+           *VALOR TOTAL R$:* ${somaTotal.toFixed(2)}
+   
+           \n*FORMA DE PAGAMENTO*
+           ${document.querySelector('input[name="pagamento"]:checked').value}
+           ${document.querySelector('input[name="pagamento"]:checked').value === 'DINHEIRO' && document.getElementById('valorTroco').value.trim() !== '' ? '\n*VALOR DE TROCO (R$)*\n' + document.getElementById('valorTroco').value : ''}
+          
+           \n*RETIRADA NO LOCAL*
+           ${retiradaProduto}
+   
+           ${enderecoTexto}
+       `;
 
     const codigoPais = '55';
     const numeroTelefone = '8791793828';
-     const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
+    //const numeroTelefone = '87991614277';
+    const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
     window.open(linkWhatsApp, '_blank');
   }
 
-  let botaoRetirada = document.querySelector("#enviarZap")
+  let botaoRetirada = document.querySelector("#enviarZap") //ativa o botão de enviar os dados via zap
   botaoRetirada.addEventListener("click", enviarMensagemWhatsApp)
 });
+
