@@ -29,12 +29,6 @@ section {
     justify-content: center;
 }
 
-.formulario {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-
-}
 
 /*Botão*/
 .acompanhamento {
@@ -46,7 +40,7 @@ section {
     border: rgba(71, 4, 97);
     cursor: pointer;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(254, 255, 253);
     transition: .5s;
     font-weight: bolder;
@@ -59,41 +53,21 @@ section {
 .img-button {
     width: 80px;
     height: 80px;
-    margin: -15px;
+    margin: -80px;
 }
 
-.botano{
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.botano {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 50px;
     margin: 50px 0px 0px 60px;
-    }
-
-#valorTroco {
-    width: 300px;
-}
-
-/* Para navegadores modernos que suportam o seletor ::placeholder */
-::placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
-}
-
-/* Para navegadores mais antigos que suportam apenas o seletor ::-webkit-input-placeholder */
-:-webkit-input-placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
-}
-
-/* Para navegadores mais antigos que suportam apenas o seletor ::-moz-placeholder */
-:-moz-placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
-}
-
-/* Para navegadores mais antigos que suportam apenas o seletor :-ms-input-placeholder */
-:-ms-input-placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
 }
 
 h1 {
