@@ -1,5 +1,10 @@
+
+
+let indiceProduto = sessionStorage.length;
+let indiceValor = sessionStorage.length;
+
 //CODIGO DA PAGINA INDEX PRODUTOS    
-       function selecionarProduto() {
+function selecionarProduto() {
     // Obtém o produto selecionado
     var produtoSelecionado = document.querySelector('input[name="produtos"]:checked');
 
@@ -9,9 +14,15 @@
         let dataText = produtoSelecionado.getAttribute('data-text'); // Obtém o valor de data-text
         let valorProduto = parseFloat(produtoSelecionado.value); // Obtém o valor do produto
 
+
+        const NomeProduto = `escolhaProduto_${indiceProduto}`;
+        const ValorProduto = `escolhaProdutoValor_${indiceValor}`;
+
+
+
         // Armazena os dados no sessionStorage
-        sessionStorage.setItem('dataText', dataText);
-        sessionStorage.setItem('valorProduto', valorProduto);
+        sessionStorage.setItem(NomeProduto, dataText);
+        sessionStorage.setItem(ValorProduto, valorProduto);
 
         // Cria condições para cada ID existente
         if (produtoSelecionado.id === "copo300") {
