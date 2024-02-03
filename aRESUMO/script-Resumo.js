@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <span style="font-weight: bold;">Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
 <span style="font-weight: bold;">Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
-<span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br>
-<span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}
+<span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br> :two hearts
+<span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}💸🤐🤔:18:18
 `;
 
   // Exibir ENDEREÇO----------------------------------------------------
