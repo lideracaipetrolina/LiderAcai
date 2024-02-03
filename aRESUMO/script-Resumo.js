@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', function () {
            *TAMANHO*
            *Produto:* ${dataText} - Valor: ${valorProduto}
    
-           \n*ACOMPANHAMENTO*
+           \n*ACOMPANHAMENTO*&#128051
            \n*COBERTURA:* \n${formatarObjetoParaString(escolhaCobertura)}
            \n*FRUTAS:* \n${formatarObjetoParaString(escolhaFrutas)}
            \n*COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
            \n*EXTRAS:* \n${formatarObjetoParaString(escolhaExtras)}
    
-           \n*TOTAL À PAGAR (R$)*
+           \n*TOTAL À PAGAR (R$)*&#128051
            *Tamanho R$:* ${valorProduto}
            *Cobertura R$:* ${somaCobertura.toFixed(2)}
            *Frutas R$:* ${somaFrutas.toFixed(2)}
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
            *Extras R$:* ${somaExtras.toFixed(2)}
            *VALOR TOTAL R$:* ${somaTotal.toFixed(2)}
    
-           \n*FORMA DE PAGAMENTO*
+           \n*FORMA DE PAGAMENTO*&#128051
            ${document.querySelector('input[name="pagamento"]:checked').value}
            ${document.querySelector('input[name="pagamento"]:checked').value === 'DINHEIRO' && document.getElementById('valorTroco').value.trim() !== '' ? '\n*VALOR DE TROCO (R$)*\n' + document.getElementById('valorTroco').value : ''}
           
