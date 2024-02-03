@@ -77,11 +77,16 @@ function concluirPedido() {
         return false;
     }
 
+    let OpcaoCobertura = `escolhaCobertura_${indiceCobertura}`;
+    let OpcaoFruta = `escolhaFrute_${indiceFrutas}`;
+    let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
+    let OpcaoExtras = `escolhaExtras_${indiceExtras}`;
+
     // Armazenar no sessionStorage
-    sessionStorage.setItem('escolhaCobertura', JSON.stringify(escolhaCobertura));
-    sessionStorage.setItem('escolhaFrutas', JSON.stringify(escolhaFrutas));
-    sessionStorage.setItem('escolhaComplementos', JSON.stringify(escolhaComplementos));
-    sessionStorage.setItem('escolhaExtras', JSON.stringify(escolhaExtras));
+    sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
+    sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
+    sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
+    sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
 
     // Redirecionar para a próxima página
     window.location.href = '/LiderAcai/aENDERECO/pagina-Endereco.html';
