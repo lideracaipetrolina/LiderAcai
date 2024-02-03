@@ -67,11 +67,55 @@ a {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin: 150px 0px 0px 60px;
+    margin: 150px 0px 0px 100px;
 }
 
 h1 {
     margin: 40px 0px 50px 30px;
     color: rgba(71, 4, 97);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/*mexe no conteúdo dentro da div mercadoria*/
+.mercadoria {
+    border: 2px solid #96206F;
+    width: 300px;
+    height: 180px;
+    margin-bottom: 20px;
+    background-color: #ff01aa23;
+}
+
+/*mexe no texto dentro da div conteudo*/
+.conteudo {
+    text-align: center;
+}
+
+/*mexe no texto valor*/
+.valor {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    width: 270px;
+    height: 35px;
+    margin: 30px 0px 30px 0px;
+    background-color: #ff25b6;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*mexe no botão excluir*/
+.excluirItem {
+    display: flex;
+    background: none;
+    color: #96206F;
+    border: none;
+    margin: -170px 0px 0px 210px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+}
+
+.excluirItem:hover {
+    color: red;
 }

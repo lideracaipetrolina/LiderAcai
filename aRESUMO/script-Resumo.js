@@ -58,25 +58,17 @@ function formatarEscolhas(escolhas) {
  // Exiba os valores formatados no HTML
  div.innerHTML += `
  <br>--------------------------------------------------------
-   <br><span style="font-weight: bold;">ACOMPANHAMENTO</span>
+ <br><span style="font-weight: bold;">TAMANHO</span>
+ <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto}
+ <br><span style="font-weight: bold;">VALOR:</span> <br>${escolhaValor}
+ <br>
+   <br><span style="font-weight: bold;">ACOMPANHAMENTOS</span>
    <br><span style="font-weight: bold;">COBERTURA:</span> <br>${formatarObjetoParaString(escolhaCobertura)}
    <br><br><span style="font-weight: bold;">FRUTAS:</span> <br>${formatarObjetoParaString(escolhaFrutas)}
    <br><br><span style="font-weight: bold;">COMPLEMENTO:</span> <br>${formatarObjetoParaString(escolhaComplementos)}
    <br><br><span style="font-weight: bold;">EXTRAS:</span> <br>${formatarObjetoParaString(escolhaExtras)} <br>
    --------------------------------------------------------
    `;
-      
-        div.innerHTML +=
-          `
-                <br><br> <span style="font-weight: bold;">SANDÁLIA:</span> ${escolhaProduto}
-                <br> <span style="font-weight: bold;">VALOR UNITÁRIO:</span> R$ ${escolhaValor.toFixed(2)}
-                <br> <span style="font-weight: bold;">COR:</span> ${escolhaCores}
-                <br> <span style="font-weight: bold;">TAMANHO:</span> ${escolhaTamanho}
-                <br> <span style="font-weight: bold;">QUANTIDADE (PAR):</span> ${escolhaQuantidade}
-                <br><br> <span style="font-weight: bold;">VALOR TOTAL: R$ </span> ${soma.toFixed(2)}
-              `;
-
-
               // CALCULO ---------------------------------
   const somarArray = (array) => {
     return array.filter((item) => item && typeof item === 'object' && 'valor' in item).reduce((acumulador, item) => acumulador + parseFloat(item.valor), 0);
