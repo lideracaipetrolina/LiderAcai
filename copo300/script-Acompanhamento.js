@@ -4,6 +4,12 @@ let escolhaFrutas = [];
 let escolhaComplementos = [];
 let escolhaExtras = [];
 
+let indiceCobertura = sessionStorage.length;
+let indiceFrutas = sessionStorage.length;
+let indiceComplementos = sessionStorage.length;
+let indiceExtras = sessionStorage.length;
+
+
 function concluirPedido() {
     const cobertura = document.getElementsByName('cobertura');
     escolhaCobertura = [];
