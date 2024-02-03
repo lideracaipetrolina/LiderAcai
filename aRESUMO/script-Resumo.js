@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Construir o texto com os resultados
   document.getElementById('gastoGeral').innerHTML = `
-<br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br> ❤️❤️❤️💸💸
-<span style="font-weight: bold;">Tamanho R$:</span> ${valorProduto} <br> &#128531;
+<br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
+<span style="font-weight: bold;">Tamanho R$:</span> ${valorProduto} <br>
 <span style="font-weight: bold;">Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
-<span style="font-weight: bold;">Frutas R$:</span> ${somaFrutas.toFixed(2)} <br> &#128531;
+<span style="font-weight: bold;">Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
-<span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br> :two hearts
-<span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}💸🤐🤔:18:18
+<span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br>
+<span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}
 `;
 
   // Exibir ENDEREÇO----------------------------------------------------
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('produtoEndereco').innerHTML = '';
   } else {
     document.getElementById('produtoEndereco').innerHTML = `
-  <br><span style="font-weight: bold;">ENDEREÇO</span> 
+  <br><span style="font-weight: bold;">ENDEREÇO</span>
   <br><span style="font-weight: bold;">Nome da Rua:</span> ${endereco.nomeRua}
   <br><span style="font-weight: bold;">Número da Casa/AP:</span> ${endereco.numeroCasa}
   <br><span style="font-weight: bold;">CEP:</span> ${endereco.cep}
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let enderecoTexto = '';
     if (enderecoPreenchido) {
       enderecoTexto = `
-               \n*ENDEREÇO PARA ENTREGA* 
+               \n*ENDEREÇO PARA ENTREGA*
                *Nome da Rua:* ${endereco.nomeRua || 'Não fornecido'}
                *Número da Casa/AP:* ${endereco.numeroCasa || 'Não fornecido'}
                *CEP:* ${endereco.cep || 'Não fornecido'}
@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', function () {
            *TAMANHO*
            *Produto:* ${dataText} - Valor: ${valorProduto}
    
-           \n*ACOMPANHAMENTO* ❤️
+           \n*ACOMPANHAMENTO*
            \n*COBERTURA:* \n${formatarObjetoParaString(escolhaCobertura)}
            \n*FRUTAS:* \n${formatarObjetoParaString(escolhaFrutas)}
            \n*COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
            \n*EXTRAS:* \n${formatarObjetoParaString(escolhaExtras)}
    
-           \n*TOTAL À PAGAR (R$)* &#128051
+           \n*TOTAL À PAGAR (R$)*
            *Tamanho R$:* ${valorProduto}
            *Cobertura R$:* ${somaCobertura.toFixed(2)}
            *Frutas R$:* ${somaFrutas.toFixed(2)}
@@ -141,11 +141,11 @@ document.addEventListener('DOMContentLoaded', function () {
            *Extras R$:* ${somaExtras.toFixed(2)}
            *VALOR TOTAL R$:* ${somaTotal.toFixed(2)}
    
-           \n*FORMA DE PAGAMENTO* &#128051
+           \n*FORMA DE PAGAMENTO*
            ${document.querySelector('input[name="pagamento"]:checked').value}
            ${document.querySelector('input[name="pagamento"]:checked').value === 'DINHEIRO' && document.getElementById('valorTroco').value.trim() !== '' ? '\n*VALOR DE TROCO (R$)*\n' + document.getElementById('valorTroco').value : ''}
           
-           \n*RETIRADA NO LOCAL* 💸🤐🤔:18:18
+           \n*RETIRADA NO LOCAL*
            ${retiradaProduto}
    
            ${enderecoTexto}
