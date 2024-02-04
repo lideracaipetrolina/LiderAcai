@@ -22,6 +22,9 @@
 }
 
 section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     width: 450px;
 }
 
@@ -52,6 +55,8 @@ section {
     margin: 0px 0px -110px -65px;
 }
 
+
+
 a {
     text-decoration: none;
     color: white;
@@ -66,20 +71,32 @@ a {
     margin: 150px 0px 0px 100px;
 }
 
+.botaoMaisItens{
+background: none;
+}
+
+/*mexe na cor do botao maisItens*/
+.aMaisitens{
+    color: rgba(71, 4, 97);
+}
+
 h1 {
     margin: 40px 0px 50px 30px;
     color: rgba(71, 4, 97);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
+/*mexe no texto dentro das div*/
 p{
     margin: 0px 0px 0px 20px;
+    
 }
 /*mexe no conteúdo dentro da div mercadoria*/
 .mercadoria {
     border: 1px solid #96206F;
     width: 300px;
-    height: 480px;
+    height: 500px;
     background-color: #e9a1d123;
     margin: 10px 15% 0px 0px;
 }
@@ -110,8 +127,9 @@ p{
     background: none;
     color: #ff0000;
     border: none;
-    margin: -440px 0px 0px 210px;
+    margin: -440px 0px 0px 220px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
     font-weight:900;
+    cursor: pointer;
 }

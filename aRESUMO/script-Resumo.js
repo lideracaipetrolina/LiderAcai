@@ -57,11 +57,11 @@ function formatarEscolhas(escolhas) {
 
  // Exiba os valores formatados no HTML
  div.innerHTML += `
- <p><br><span style="font-weight: bold;">TAMANHO</span>
- <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto} ${escolhaValor.toFixed(2)}
+ <p>
+ <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto} ${escolhaValor.toFixed(2)}
  <br>
    <br><span style="font-weight: bold;">ACOMPANHAMENTOS</span>
-   <br><span style="font-weight: bold;">COBERTURA:</span> <br>${formatarObjetoParaString(escolhaCobertura)}
+   <br><br><span style="font-weight: bold;">COBERTURA:</span> <br>${formatarObjetoParaString(escolhaCobertura)}
    <br><br><span style="font-weight: bold;">FRUTAS:</span> <br>${formatarObjetoParaString(escolhaFrutas)}
    <br><br><span style="font-weight: bold;">COMPLEMENTO:</span> <br>${formatarObjetoParaString(escolhaComplementos)}
    <br><br><span style="font-weight: bold;">EXTRAS:</span> <br>${formatarObjetoParaString(escolhaExtras)} <br></p>
@@ -87,7 +87,7 @@ function formatarEscolhas(escolhas) {
 <span style="font-weight: bold;">Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
 <span style="font-weight: bold;">Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
-<span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br>
+<span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br><br>
 <span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}</p>
 `;
 
