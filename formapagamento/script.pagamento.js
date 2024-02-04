@@ -1,6 +1,6 @@
 //FORMA DE PAGAMENTO
 
-import { enviarZap } from '../compras/script.js';
+
 const FormaPagamento = () => {
     let formasPagamento = document.getElementsByName('pagamento');
     for (let i = 0; i < formasPagamento.length; i++) {

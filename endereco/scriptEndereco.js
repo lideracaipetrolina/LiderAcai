@@ -18,7 +18,7 @@ const FormEnd = () => {
         referencia: referencia,
       };
       sessionStorage.setItem('endereco', JSON.stringify(endereco));
-      window.location.href = '/PedeAlgodao/formapagamento/pagamento.html'
+      window.location.href = '/formapagamento/pagamento.html'
       } else {
       alert('Por favor, preencha todos os campos do Endereço para Entrega.');
       return false; // Impede o envio do formulário se a validação falhar

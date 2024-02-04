@@ -1,18 +1,21 @@
-const carrinhoCompras = () => {
 
+const carrinhoCompras = () => {
+ let somaGeral = 0
   const container = document.querySelector('.conteudo');
 
-  const Apagar = (div, chaveProduto, chaveValor) => {
+  const Apagar = (div, chaveProduto, chaveValor,somaTotal) => {
     let excluir = document.createElement('button');
     excluir.setAttribute("class", "excluirItem");
     excluir.innerHTML = "REMOVER";
     div.appendChild(excluir);
+    
 
-    excluir.addEventListener('click', function () {
-     
+    excluir.addEventListener('click', ()=> {
       container.removeChild(div); // Remove a div que contém o botão
       removerSessionStorage(chaveProduto, chaveValor);
-
+//Subtrai o valor junto com a exclusão
+      somaGeral -= somaTotal;
+      document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR GERAL:</span> R$ ${somaGeral.toFixed(2)}`;
     });
   };
 
@@ -38,11 +41,13 @@ const carrinhoCompras = () => {
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
       const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
       
+    
+     
 
-if (escolhaProduto &&  !isNaN(escolhaValor)) {
+if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos &&  escolhaExtras && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
-
+        
 // Exibir ACOMPANHAMENTOS---------------------------------------------------
 function formatarObjetoParaString(objeto) {
   return Array.isArray(objeto) ? formatarEscolhas(objeto) : JSON.stringify(objeto, null, 2);
@@ -62,7 +67,7 @@ function formatarEscolhas(escolhas) {
  // Exiba os valores formatados no HTML
  div.innerHTML += `
  <p>
- <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto} ${escolhaValor.toFixed(2)}
+ <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
  <br>
    <br><span style="font-weight: bold;">ACOMPANHAMENTOS</span>
    <br><br><span style="font-weight: bold;">COBERTURA:</span> <br>${formatarObjetoParaString(escolhaCobertura)}
@@ -95,15 +100,23 @@ function formatarEscolhas(escolhas) {
 <span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}</p>
 `;
 
-        container.appendChild(div);
-        Apagar(div, chaveProduto, chaveValor,);
+
+container.appendChild(div);
+Apagar(div, chaveProduto, chaveValor,somaTotal);
+
+calcular(somaTotal)
      }
     }
-
   }
+  const calcular = (somaTotal) => {
+    somaGeral += somaTotal;
+      };
+
  CriaDiv()
+ document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR GERAL:</span> R$ ${somaGeral.toFixed(2)}`;
 }
 document.addEventListener('DOMContentLoaded', carrinhoCompras);
+
 
 
 // //----------------------zap

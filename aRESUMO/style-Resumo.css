@@ -94,11 +94,12 @@ p{
 }
 /*mexe no conteúdo dentro da div mercadoria*/
 .mercadoria {
-    border: 1px solid #96206F;
+    position: relative; /* Adicionado para que .excluirItem seja posicionado em relação a este elemento */
+    border: 1px solid rgba(71, 4, 97);
     width: 300px;
-    height: 500px;
     background-color: #e9a1d123;
-    margin: 10px 0px 0px 10%;
+    margin: 10px 0 0 10%;
+   padding-bottom: 20px;
 }
 
 /*mexe no texto dentro da div conteudo*/
@@ -109,29 +110,31 @@ p{
     gap: 20px;
 }
 
-/*mexe no texto valor
+/*mexe no texto valor*/
 .valor {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 900;
     width: 270px;
     height: 35px;
-    margin: 30px 0px 30px 0px;
-    background-color: #ff25b6;
+    margin: 40px 0px 0px 50px;
+    background-color: rgba(71, 4, 97);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-}*/
+} 
 
 /*mexe no botão excluir*/
 .excluirItem {
     display: flex;
+    position: absolute;
     background: none;
     color: #ff0000;
     border: none;
-    margin: -440px 0px 0px 220px;
+    top: 35px; /* Ajuste a distância do topo conforme necessário */
+    right: 10px; /* Ajuste a distância da direita conforme necessário */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
-    font-weight:900;
+    font-weight: 900;
     cursor: pointer;
 }
