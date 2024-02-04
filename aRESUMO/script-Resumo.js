@@ -37,8 +37,9 @@ const carrinhoCompras = () => {
       const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || [];
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
       const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
+      
 
-      if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
+     // if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
 
@@ -54,6 +55,9 @@ function formatarEscolha(escolha) {
 function formatarEscolhas(escolhas) {
   return escolhas.map(formatarEscolha).join('<br>');
 }
+
+
+
 
  // Exiba os valores formatados no HTML
  div.innerHTML += `
@@ -93,11 +97,11 @@ function formatarEscolhas(escolhas) {
 
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor,);
-      }
+     // }
     }
 
   }
-  CriaDiv()
+ CriaDiv()
 }
 document.addEventListener('DOMContentLoaded', carrinhoCompras);
 
