@@ -1,6 +1,6 @@
 //FORMA DE PAGAMENTO
 
-
+import { enviarZap } from '../EnviarZap/scriptEnviarZap';
 const FormaPagamento = () => {
     let formasPagamento = document.getElementsByName('pagamento');
     for (let i = 0; i < formasPagamento.length; i++) {
@@ -38,6 +38,7 @@ const FormaPagamento = () => {
         // Verifica se pelo menos uma forma de pagamento foi escolhida antes de prosseguir
         
         if(sessionStorage.getItem('formaPagamento')) {
+            enviarZap();
         }
        else if (!sessionStorage.getItem('formaPagamento')) {
             alert("Escolha uma forma de pagamento!");
