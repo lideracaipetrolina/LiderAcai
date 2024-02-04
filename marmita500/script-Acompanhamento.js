@@ -85,6 +85,33 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
 
+}
+
+let indiceProduto = sessionStorage.length;
+let indiceValor = sessionStorage.length;
+
+const ProdutoEscolhido = () => {
+    const botaoEnviar = document.querySelector(".botaoAcomp")
+
+    if (botaoEnviar) {
+
+        let dataText = botaoEnviar.getAttribute('data-text'); // Obtém o valor de data-text
+        let valorProduto = parseFloat(botaoEnviar.value); // Obtém o valor do produto
+
+
+        const NomeProduto = `escolhaProduto_${indiceProduto}`;
+        const ValorProduto = `escolhaProdutoValor_${indiceValor}`;
+
+        sessionStorage.setItem(NomeProduto, dataText);
+        sessionStorage.setItem(ValorProduto, valorProduto);
+    }
+
+
+}
+
+document.querySelector(".botaoAcomp").addEventListener("click", () => {
+    ProdutoEscolhido()
+    concluirPedido()
     // Redirecionar para a próxima página
     window.location.href = '/aRESUMO/pagina-Resumo.html'
-}
+})

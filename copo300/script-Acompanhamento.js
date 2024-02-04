@@ -79,19 +79,10 @@ function concluirPedido() {
     }
 
 
-
-
     let OpcaoCobertura = `escolhaCobertura_${indiceCobertura}`;
     let OpcaoFruta = `escolhaFruta_${indiceFrutas}`;
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
     let OpcaoExtras = `escolhaExtras_${indiceExtras}`;
-
-
-
-
-
-
-
 
     // Armazenar no sessionStorage
 
