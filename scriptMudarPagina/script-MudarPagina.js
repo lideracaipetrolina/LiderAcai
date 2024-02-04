@@ -41,7 +41,7 @@ function selecionarProduto() {
             window.location.href = "../LiderAcai/pote480/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
         }
         else if (produtoSelecionado.id === "marmita500") {
-            window.location.href = "../LiderAcai/marmita500/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
+            window.location.href = "/copo300/pagina-Acompanhamento.html"; // Insira o caminho da página desejada
         }
         else {
             alert("ID do produto não reconhecido");

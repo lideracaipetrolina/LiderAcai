@@ -81,12 +81,12 @@ function formatarEscolhas(escolhas) {
   const somaExtras = somarArray(escolhaExtras);
 
   // Calcular a soma total
-  const somaTotal = parseFloat(valorProduto) + somaCobertura + somaFrutas + somaComplementos + somaExtras;
+  const somaTotal = parseFloat(escolhaValor) + somaCobertura + somaFrutas + somaComplementos + somaExtras;
 
   // Construir o texto com os resultados
   div.innerHTML += `
 <br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
-<span style="font-weight: bold;">Tamanho R$:</span> ${valorProduto} <br>
+<span style="font-weight: bold;">Tamanho R$:</span> ${escolhaValor} <br>
 <span style="font-weight: bold;">Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
 <span style="font-weight: bold;">Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
