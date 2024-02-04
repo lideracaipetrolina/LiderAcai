@@ -33,10 +33,10 @@ const carrinhoCompras = () => {
 
       const escolhaProduto = sessionStorage.getItem(chaveProduto);
       const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
-      const escolhaCobertura = JSON.parse(sessionStorage.getItem(chaveCobertura)) || {};
-      const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || {};
-      const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || {};
-      const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || {};
+      const escolhaCobertura = JSON.parse(sessionStorage.getItem(chaveCobertura)) || [];
+      const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || [];
+      const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
+      const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
 
       if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
@@ -57,17 +57,14 @@ function formatarEscolhas(escolhas) {
 
  // Exiba os valores formatados no HTML
  div.innerHTML += `
- <br>--------------------------------------------------------
- <br><span style="font-weight: bold;">TAMANHO</span>
- <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto}
- <br><span style="font-weight: bold;">VALOR:</span> <br>${escolhaValor}
+ <p><br><span style="font-weight: bold;">TAMANHO</span>
+ <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto} ${escolhaValor.toFixed(2)}
  <br>
    <br><span style="font-weight: bold;">ACOMPANHAMENTOS</span>
    <br><span style="font-weight: bold;">COBERTURA:</span> <br>${formatarObjetoParaString(escolhaCobertura)}
    <br><br><span style="font-weight: bold;">FRUTAS:</span> <br>${formatarObjetoParaString(escolhaFrutas)}
    <br><br><span style="font-weight: bold;">COMPLEMENTO:</span> <br>${formatarObjetoParaString(escolhaComplementos)}
-   <br><br><span style="font-weight: bold;">EXTRAS:</span> <br>${formatarObjetoParaString(escolhaExtras)} <br>
-   --------------------------------------------------------
+   <br><br><span style="font-weight: bold;">EXTRAS:</span> <br>${formatarObjetoParaString(escolhaExtras)} <br></p>
    `;
               // CALCULO ---------------------------------
   const somarArray = (array) => {
@@ -85,13 +82,13 @@ function formatarEscolhas(escolhas) {
 
   // Construir o texto com os resultados
   div.innerHTML += `
-<br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
-<span style="font-weight: bold;">Tamanho R$:</span> ${escolhaValor} <br>
+<p><br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
+<span style="font-weight: bold;">Tamanho R$:</span> ${escolhaValor.toFixed(2)} <br>
 <span style="font-weight: bold;">Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
 <span style="font-weight: bold;">Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
 <span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br>
-<span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}
+<span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}</p>
 `;
 
         container.appendChild(div);
