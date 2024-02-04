@@ -96,7 +96,7 @@ p{
 .mercadoria {
     position: relative; /* Adicionado para que .excluirItem seja posicionado em relação a este elemento */
     border: 1px solid rgba(71, 4, 97);
-    width: 300px;
+    width: 350px;
     background-color: #e9a1d123;
     margin: 10px 0 0 10%;
    padding-bottom: 20px;

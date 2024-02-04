@@ -6,7 +6,7 @@ const carrinhoCompras = () => {
   const Apagar = (div, chaveProduto, chaveValor, somaTotal) => {
     let excluir = document.createElement('button');
     excluir.setAttribute("class", "excluirItem");
-    excluir.innerHTML = "REMOVER";
+    excluir.innerHTML = "REMOVER &#10060";
     div.appendChild(excluir);
 
 
@@ -70,10 +70,10 @@ const carrinhoCompras = () => {
  <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
  <br>
    <br><span style="font-weight: bold;">ACOMPANHAMENTOS</span>
-   <br><br><span style="font-weight: bold;">COBERTURA:</span> <br>${formatarObjetoParaString(escolhaCobertura)}
-   <br><br><span style="font-weight: bold;">FRUTAS:</span> <br>${formatarObjetoParaString(escolhaFrutas)}
-   <br><br><span style="font-weight: bold;">COMPLEMENTO:</span> <br>${formatarObjetoParaString(escolhaComplementos)}
-   <br><br><span style="font-weight: bold;">EXTRAS:</span> <br>${formatarObjetoParaString(escolhaExtras)} <br></p>
+   <br><br><span style="font-weight: bold;">COBERTURA:</span> <br>&#9989 ${formatarObjetoParaString(escolhaCobertura)}
+   <br><br><span style="font-weight: bold;">FRUTAS:</span> <br>&#9989 ${formatarObjetoParaString(escolhaFrutas)}
+   <br><br><span style="font-weight: bold;">COMPLEMENTO:</span> <br>&#9989 ${formatarObjetoParaString(escolhaComplementos)}
+   <br><br><span style="font-weight: bold;">EXTRAS:</span> <br>&#9989 ${formatarObjetoParaString(escolhaExtras)} <br></p>
    `;
         // CALCULO ---------------------------------
         const somarArray = (array) => {
@@ -92,12 +92,12 @@ const carrinhoCompras = () => {
         // Construir o texto com os resultados
         div.innerHTML += `
 <p><br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
-<span style="font-weight: bold;">Tamanho R$:</span> ${escolhaValor.toFixed(2)} <br>
-<span style="font-weight: bold;">Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
-<span style="font-weight: bold;">Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
-<span style="font-weight: bold;">Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
-<span style="font-weight: bold;">Extras R$:</span> ${somaExtras.toFixed(2)} <br><br>
-<span style="font-weight: bold;">VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}</p>
+<span style="font-weight: bold;">&#128178 Tamanho R$:</span> ${escolhaValor.toFixed(2)} <br>
+<span style="font-weight: bold;">&#128178 Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
+<span style="font-weight: bold;">&#128178 Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
+<span style="font-weight: bold;">&#128178 Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
+<span style="font-weight: bold;">&#128178 Extras R$:</span> ${somaExtras.toFixed(2)} <br><br>
+<span style="font-weight: bold;">&#128181 VALOR TOTAL R$:</span> ${somaTotal.toFixed(2)}</p>
 `;
 
 
@@ -113,6 +113,6 @@ const carrinhoCompras = () => {
   };
 
   CriaDiv()
-  document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">VALOR GERAL:</span> R$ ${somaGeral.toFixed(2)}`;
+  document.querySelector(".valor").innerHTML = `<span style="font-weight: bold;">&#128181 VALOR GERAL:</span> R$ ${somaGeral.toFixed(2)} &#128181`;
 }
 document.addEventListener('DOMContentLoaded', carrinhoCompras);
