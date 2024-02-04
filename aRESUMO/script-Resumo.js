@@ -39,7 +39,7 @@ const carrinhoCompras = () => {
       const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
       
 
-     // if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
+if (escolhaProduto &&  !isNaN(escolhaValor)) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
 
@@ -97,7 +97,7 @@ function formatarEscolhas(escolhas) {
 
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor,);
-     // }
+     }
     }
 
   }
