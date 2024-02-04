@@ -69,5 +69,5 @@ const FormEnd = () => {
   let botaoRetirada = document.querySelector("#botaoRetirada")
   botaoRetirada.addEventListener("click", () => {
     Escolha();
-    window.location.href = '/PedeAlgodao/formapagamento/pagamento.html'
+    window.location.href = '/formapagamento/pagamento.html'
   })

@@ -38,7 +38,6 @@ const FormaPagamento = () => {
         // Verifica se pelo menos uma forma de pagamento foi escolhida antes de prosseguir
         
         if(sessionStorage.getItem('formaPagamento')) {
-            enviarZap();
         }
        else if (!sessionStorage.getItem('formaPagamento')) {
             alert("Escolha uma forma de pagamento!");
