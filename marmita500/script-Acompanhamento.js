@@ -86,5 +86,5 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
 
     // Redirecionar para a próxima página
-    window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
+    window.location.href = '/aRESUMO/pagina-Resumo.html'
 }
