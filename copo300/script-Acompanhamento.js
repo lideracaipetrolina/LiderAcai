@@ -8,6 +8,7 @@ let indiceCobertura = sessionStorage.length;
 let indiceFrutas = sessionStorage.length;
 let indiceComplementos = sessionStorage.length;
 let indiceExtras = sessionStorage.length;
+let indice
 
 
 function concluirPedido() {
