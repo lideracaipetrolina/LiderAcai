@@ -103,7 +103,7 @@ const numeroPedidoBase = criarPedido();
   const numeroPedido = numeroPedidoBase + i;
   
         textoParaEnviar += `
-        *PEDIDO Nº:* ${numeroPedido}
+        *PEDIDO Nº:* ${numeroPedido} 😃😃😃
         \n*PEDIDO LIDER AÇAÍ*
         \n*PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         \n*ACOMPANHAMENTOS*
