@@ -63,9 +63,8 @@ const enviarMensagemWhatsApp=()=> {
     const calcular = (somaTotal)=> {
       somaGeral += somaTotal;
     };
-    
-// Gere o número do pedido uma vez fora do loop
-const numeroPedidoBase = criarPedido();
+//contador de pedidos
+    let numeroPedido = 1;
 
     for (let i = 0; i < sessionStorage.length; i++) {
       const chaveProduto = `escolhaProduto_${i}`;
@@ -100,8 +99,9 @@ const numeroPedidoBase = criarPedido();
       function formatarEscolhas(escolhas) {
     return escolhas.map(formatarEscolha).join('\n');
   }
-  const numeroPedido = numeroPedidoBase + i;
+
   
+
         textoParaEnviar += `
         *PEDIDO Nº:* ${numeroPedido} 😃😃😃
         \n*PEDIDO LIDER AÇAÍ*
@@ -113,6 +113,8 @@ const numeroPedidoBase = criarPedido();
         \n*EXTRAS:*  \n${formatarObjetoParaString(escolhaExtras)}
   
    `;
+
+   numeroPedido++;
         // CALCULO ---------------------------------
         const somarArray = (array) => {
           return array.filter((item) => item && typeof item === 'object' && 'valor' in item).reduce((acumulador, item) => acumulador + parseFloat(item.valor), 0);
@@ -199,15 +201,3 @@ const numeroPedidoBase = criarPedido();
     window.open(linkWhatsApp, '_blank');
   }
 
-
-    // Função para gerar um número aleatório entre 1 e 1000
-    const gerarNumeroAleatorio = () => {
-      return Math.floor(Math.random() * 1000) + 1;
-    };
-    
-    // Função para criar um pedido com um número aleatório
-    const criarPedido = () => {
-      return gerarNumeroAleatorio();
-    };
-    const numeroPedido = criarPedido();
-  
