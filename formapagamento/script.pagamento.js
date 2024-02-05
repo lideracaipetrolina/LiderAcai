@@ -57,12 +57,19 @@ document.addEventListener('DOMContentLoaded', FormaPagamento);
 
 const enviarMensagemWhatsApp=()=> {
     let somaGeral = 0
+    let pedidoGeral = 0
     let textoParaEnviar = '';
   
   
+    const pedidos = (pedido)=> {
+      pedidoGeral+= pedido
+    };
+
     const calcular = (somaTotal)=> {
       somaGeral += somaTotal;
     };
+
+
     
     for (let i = 0; i < sessionStorage.length; i++) {
       const chaveProduto = `escolhaProduto_${i}`;
@@ -97,7 +104,28 @@ const enviarMensagemWhatsApp=()=> {
       function formatarEscolhas(escolhas) {
     return escolhas.map(formatarEscolha).join('\n');
   }
+
+// Função para gerar um número aleatório entre 1 e 1000
+function gerarNumeroAleatorio() {
+  return Math.floor(Math.random() * 1000) + 1;
+}
+
+// Função para criar um pedido com um número aleatório
+function criarPedido() {
+  const numeroPedido = gerarNumeroAleatorio();
+  return `Pedido nº ${numeroPedido}`;
+}
+
+// Exemplo de uso
+for (let i = 1; i <= 5; i++) {
+  const pedido = criarPedido();
+  pedidos(pedido)
+}
+
+
+
         textoParaEnviar += `
+        *PEDIDO Nª ${pedidoGeral}
         *PEDIDO LIDER AÇAÍ*
         \n*PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         \n*ACOMPANHAMENTOS*
