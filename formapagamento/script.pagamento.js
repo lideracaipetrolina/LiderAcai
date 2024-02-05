@@ -1,6 +1,6 @@
 //FORMA DE PAGAMENTO
 
-import { enviarMensagemWhatsApp } from '/LiderAcai/EnviarZap/scriptEnviarZap';
+import { enviarMensagemWhatsApp } from '../EnviarZap/scriptEnviarZap';
 
 
 const FormaPagamento = () => {
@@ -51,7 +51,7 @@ const FormaPagamento = () => {
     document.querySelector("#Fpagamento").addEventListener("click", () => {
         Troco()
         VerificarDados()
-        formasPagamento()
+        FormaPagamento()
     });
 };
 
