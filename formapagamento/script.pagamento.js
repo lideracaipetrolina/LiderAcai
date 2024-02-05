@@ -1,6 +1,6 @@
 //FORMA DE PAGAMENTO
 
-import { enviarMensagemWhatsApp } from '../EnviarZap/scriptEnviarZap';
+import { enviarMensagemWhatsApp } from '/LiderAcai/EnviarZap/scriptEnviarZap';
 
 
 const FormaPagamento = () => {
