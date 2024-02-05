@@ -70,7 +70,7 @@ const enviarMensagemWhatsApp = () => {
   };
 
   const numeroPedido = criarPedido();
-  
+
   const calcular = (somaTotal) => {
     somaGeral += somaTotal;
   };
@@ -112,7 +112,7 @@ const enviarMensagemWhatsApp = () => {
       }
      
       textoParaEnviar += `
-        *PEDIDO Nª ${numeroPedido}
+        *PEDIDO Nº*: ${numeroPedido}
         *PEDIDO LIDER AÇAÍ*
         \n*PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         \n*ACOMPANHAMENTOS*
