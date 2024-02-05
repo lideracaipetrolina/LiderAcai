@@ -67,7 +67,7 @@ const carrinhoCompras = () => {
         // Exiba os valores formatados no HTML
         div.innerHTML += `
  <p>
- <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
+ <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>&#127826;${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
  <br>
    <br><span style="font-weight: bold;">ACOMPANHAMENTOS</span>
    <br><br><span style="font-weight: bold;">COBERTURA:</span> <br>&#9989 ${formatarObjetoParaString(escolhaCobertura)}
