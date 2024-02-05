@@ -113,5 +113,5 @@ document.querySelector(".botaoAcomp").addEventListener("click", () => {
     ProdutoEscolhido()
     concluirPedido()
     // Redirecionar para a próxima página
-    window.location.href = '/aRESUMO/pagina-Resumo.html'
+    window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
 })

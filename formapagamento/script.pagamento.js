@@ -99,7 +99,6 @@ const enviarMensagemWhatsApp=()=> {
   }
         textoParaEnviar += `
         *PEDIDO LIDER AÇAÍ*
-        \n
         \n*PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         \n*ACOMPANHAMENTOS*
         \n*COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}
@@ -124,6 +123,7 @@ const enviarMensagemWhatsApp=()=> {
   
         // Construir o texto com os resultados
         textoParaEnviar += `
+        ----------------------------------------
         \n*RESUMO TOTAL À PAGAR(R$)*
         *TAMANHO R$:* ${escolhaValor.toFixed(2)}
         *COBERTURA R$:* ${somaCobertura.toFixed(2)}
@@ -162,23 +162,29 @@ const enviarMensagemWhatsApp=()=> {
              `;
     }
   
-  textoParaEnviar += `\n*VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
+  textoParaEnviar += `
+  \n*VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
+
   
-    textoParaEnviar += ` \n\n*RETIRADA NO LOCAL*: ${retiradaProduto}`
+  if (formaPagamento) {
+    textoParaEnviar += `
+    ----------------------------------------
+      \n*FORMA DE PAGAMENTO:* ${formaPagamento} 
+    `;
+  }
+
+  if (valorTroco) {
+    textoParaEnviar += `
+    *TROCO:* ${valorTroco}
+    `;
+  }
+  
+    textoParaEnviar += ` 
+    ----------------------------------------
+    \n\n*RETIRADA NO LOCAL*: ${retiradaProduto}`
   
     textoParaEnviar += `${enderecoTexto}`
   
-    if (formaPagamento) {
-      textoParaEnviar += `
-        \n*FORMA DE PAGAMENTO:* ${formaPagamento} 
-      `;
-    }
-  
-    if (valorTroco) {
-      textoParaEnviar += `
-      *TROCO:* ${valorTroco}
-      `;
-    }
   
     const codigoPais = '55';
     const numeroTelefone = '87991614277';
