@@ -71,12 +71,12 @@ a {
     margin: 40px 0px 150px 100px;
 }
 
-.botaoMaisItens{
-background: none;
+.botaoMaisItens {
+    background: none;
 }
 
 /*mexe na cor do botao maisItens*/
-.aMaisitens{
+.aMaisitens {
     color: rgba(71, 4, 97);
 }
 
@@ -88,18 +88,21 @@ h1 {
 
 
 /*mexe no texto dentro das div*/
-p{
+p {
     margin: 0px 0px 0px 20px;
-    
+
 }
+
 /*mexe no conteúdo dentro da div mercadoria*/
 .mercadoria {
-    position: relative; /* Adicionado para que .excluirItem seja posicionado em relação a este elemento */
+    position: relative;
+    /* Adicionado para que .excluirItem seja posicionado em relação a este elemento */
     border: 1px solid rgba(71, 4, 97);
     width: 350px;
     background-color: #e9a1d123;
-    margin: 10px 0 0 10%;
-   padding-bottom: 20px;
+    margin: 10px 0 0 3%;
+    padding-bottom: 20px;
+    
 }
 
 /*mexe no texto dentro da div conteudo*/
@@ -122,7 +125,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+}
 
 /*mexe no botão excluir*/
 .excluirItem {
@@ -131,8 +134,10 @@ p{
     background: none;
     color: #ff0000;
     border: none;
-    top: 35px; /* Ajuste a distância do topo conforme necessário */
-    right: 10px; /* Ajuste a distância da direita conforme necessário */
+    top: 35px;
+    /* Ajuste a distância do topo conforme necessário */
+    right: 10px;
+    /* Ajuste a distância da direita conforme necessário */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 12px;
     font-weight: 900;
