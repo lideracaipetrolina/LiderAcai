@@ -113,9 +113,6 @@ main {
     font-weight: 900;
 }
 
-.BotaoMenu:hover {
-    color: rgb(128, 205, 42);
-}
 
 .img-button {
     width: 80px;
