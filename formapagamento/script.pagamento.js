@@ -123,7 +123,7 @@ const enviarMensagemWhatsApp=()=> {
         *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
         *COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
         *EXTRAS:*  \n${formatarObjetoParaString(escolhaExtras)}
-        _________________________________________________________________________________________
+        ____________________________________________
         \n*RESUMO TOTAL À PAGAR(R$)*
         *TAMANHO R$:* ${escolhaValor.toFixed(2)}
         *COBERTURA R$:* ${somaCobertura.toFixed(2)}
@@ -131,7 +131,7 @@ const enviarMensagemWhatsApp=()=> {
         *COMPLEMENTOS R$:* ${somaComplementos.toFixed(2)}
         *EXTRAS R$:* ${somaExtras.toFixed(2)}
         *VALOR TOTAL R$:* ${somaTotal.toFixed(2)}
-        _________________________________________________________________________________________  
+        ____________________________________________
    `;
 
    numeroPedido++;
@@ -152,7 +152,7 @@ const enviarMensagemWhatsApp=()=> {
     
     if (formaPagamento) {
       textoParaEnviar += `
-      _________________________________________________________________________________________
+      ____________________________________________
         \n*FORMA DE PAGAMENTO:* ${formaPagamento} 
       `;
     }
@@ -180,7 +180,7 @@ const enviarMensagemWhatsApp=()=> {
     }
   
     textoParaEnviar += ` 
-    _________________________________________________________________________________________
+    ____________________________________________
     \n\n*RETIRADA NO LOCAL*: ${retiradaProduto}`
   
     textoParaEnviar += `${enderecoTexto}`
