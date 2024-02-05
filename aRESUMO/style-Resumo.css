@@ -22,19 +22,12 @@
 }
 
 section {
-    width: 450px;
     display: flex;
     flex-direction: column;
     margin: auto;
-    justify-content: center;
+    width: 450px;
 }
 
-.formulario {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-
-}
 
 /*Botão*/
 .acompanhamento {
@@ -46,7 +39,7 @@ section {
     border: rgba(71, 4, 97);
     cursor: pointer;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(254, 255, 253);
     transition: .5s;
     font-weight: bolder;
@@ -59,45 +52,94 @@ section {
 .img-button {
     width: 80px;
     height: 80px;
-    margin: -15px;
+    margin: 0px 0px -110px -65px;
 }
 
-.botano{
+
+
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.botano {
     display: flex;
-    flex-direction: row;
-    margin: 50px 0px 0px 60px;
-    }
-
-#valorTroco {
-    width: 300px;
+    flex-direction: column;
+    gap: 50px;
+    margin: 40px 0px 150px 100px;
 }
 
-/* Para navegadores modernos que suportam o seletor ::placeholder */
-::placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
+.botaoMaisItens {
+    background: none;
 }
 
-/* Para navegadores mais antigos que suportam apenas o seletor ::-webkit-input-placeholder */
-:-webkit-input-placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
-}
-
-/* Para navegadores mais antigos que suportam apenas o seletor ::-moz-placeholder */
-:-moz-placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
-}
-
-/* Para navegadores mais antigos que suportam apenas o seletor :-ms-input-placeholder */
-:-ms-input-placeholder {
-    color: #ff0303;
-    /* Substitua pela cor desejada */
+/*mexe na cor do botao maisItens*/
+.aMaisitens {
+    color: rgba(71, 4, 97);
 }
 
 h1 {
     margin: 40px 0px 50px 30px;
     color: rgba(71, 4, 97);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/*mexe no texto dentro das div*/
+p {
+    margin: 0px 0px 0px 20px;
+
+}
+
+/*mexe no conteúdo dentro da div mercadoria*/
+.mercadoria {
+    position: relative;
+    /* Adicionado para que .excluirItem seja posicionado em relação a este elemento */
+    border: 1px solid rgba(71, 4, 97);
+    width: 350px;
+    background-color: #e9a1d123;
+    margin: 10px 0 0 3%;
+    padding-bottom: 20px;
+    
+}
+
+/*mexe no texto dentro da div conteudo*/
+.conteudo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*mexe no texto valor*/
+.valor {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    width: 270px;
+    height: 35px;
+    margin: 40px 0px 0px 50px;
+    background-color: rgba(71, 4, 97);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*mexe no botão excluir*/
+.excluirItem {
+    display: flex;
+    position: absolute;
+    background: none;
+    color: #ff0000;
+    border: none;
+    top: 35px;
+    /* Ajuste a distância do topo conforme necessário */
+    right: 10px;
+    /* Ajuste a distância da direita conforme necessário */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
 }

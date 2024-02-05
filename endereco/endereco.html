@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-Endereco.css">
-    <script src="script-Endereco.js" defer></script>
+    <script src="../endereco/scriptEndereco.js" defer></script>
     <title>LIDER AÇAÍ</title>
 </head>
 
@@ -15,7 +15,7 @@
         <section class="Acompanhamentos">
             <div class="CaixasAcompanhamentos">
                 <div class="retirada">
-                    <label for="">RETIRADA NO LOCAL?</label>
+                    <label for=""> <p class="PTexto">RETIRADA NO LOCAL?</p></label>
                     <div><input type="radio" name="entrega" id="retirarsim" value="SIM">
                         <label for="">SIM</label>
                     </div>
@@ -28,7 +28,6 @@
 
                 <br><br><br>
                 <div class="botano" style="display: none;">
-                    <img src="../img-Index/BOTAO2.jpg" alt="" srcset="" class="img-button">
                     <button type="button" class="acompanhamento" id="botaoRetirada">
                         AVANÇAR
                     </button>
@@ -58,8 +57,8 @@
                             placeholder="Ex: Se é perto de Igreja, Escola, Mercado...">
 
                     </div>
-                    <div class="botano"><img src="../img-Index/BOTAO2.jpg" alt="" srcset="" class="img-button">
-                        <button type="button" class="acompanhamento" onclick="FormEnd()">
+                    <div class="botano">
+                        <button type="button" class="acompanhamento bota2" id="botaoEndereco">
                             AVANÇAR
                         </button>
                     </div>
