@@ -69,11 +69,11 @@ const carrinhoCompras = () => {
  <p>
  <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>&#127826;${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
  <br>
-   <br><span style="font-weight: bold;">ACOMPANHAMENTOS</span>
-   <br><br><span style="font-weight: bold;">COBERTURA:</span> <br>&#9989 ${formatarObjetoParaString(escolhaCobertura)}
-   <br><br><span style="font-weight: bold;">FRUTAS:</span> <br>&#9989 ${formatarObjetoParaString(escolhaFrutas)}
-   <br><br><span style="font-weight: bold;">COMPLEMENTO:</span> <br>&#9989 ${formatarObjetoParaString(escolhaComplementos)}
-   <br><br><span style="font-weight: bold;">EXTRAS:</span> <br>&#9989 ${formatarObjetoParaString(escolhaExtras)} <br></p>
+   <br><span style="font-weight: bold;">&#127860; ACOMPANHAMENTOS</span>
+   <br><br><span style="font-weight: bold;">&#127860; COBERTURA:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
+   <br><br><span style="font-weight: bold;">&#127860; FRUTAS:</span> <br> ${formatarObjetoParaString(escolhaFrutas)}
+   <br><br><span style="font-weight: bold;">&#127860; COMPLEMENTO:</span> <br> ${formatarObjetoParaString(escolhaComplementos)}
+   <br><br><span style="font-weight: bold;">&#127860; EXTRAS:</span> <br> ${formatarObjetoParaString(escolhaExtras)} <br></p>
    `;
         // CALCULO ---------------------------------
         const somarArray = (array) => {
