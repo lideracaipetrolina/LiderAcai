@@ -1,8 +1,5 @@
 //FORMA DE PAGAMENTO
 
-import { enviarMensagemWhatsApp } from '../EnviarZap/scriptEnviarZap';
-
-
 const FormaPagamento = () => {
     let formasPagamento = document.getElementsByName('pagamento');
     for (let i = 0; i < formasPagamento.length; i++) {
