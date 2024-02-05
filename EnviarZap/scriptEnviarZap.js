@@ -134,14 +134,6 @@ textoParaEnviar += `\n*VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
   window.open(linkWhatsApp, '_blank');
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-  let botaoRetirada = document.getElementById("enviarZap");
-  botaoRetirada.addEventListener("click", () => {
-    enviarMensagemWhatsApp()
-  });
-});
-
 document.addEventListener("DOMContentLoaded", ()=>{
   enviarMensagemWhatsApp()
 })
