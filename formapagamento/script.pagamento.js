@@ -100,38 +100,30 @@ const enviarMensagemWhatsApp=()=> {
     return escolhas.map(formatarEscolha).join('\n');
   }
 
-  
+      // CALCULO ---------------------------------
+      const somarArray = (array) => {
+        return array.filter((item) => item && typeof item === 'object' && 'valor' in item).reduce((acumulador, item) => acumulador + parseFloat(item.valor), 0);
+      };
+
+      // Somar os valores de cada array
+      const somaCobertura = somarArray(escolhaCobertura);
+      const somaFrutas = somarArray(escolhaFrutas);
+      const somaComplementos = somarArray(escolhaComplementos);
+      const somaExtras = somarArray(escolhaExtras);
+
+      // Calcular a soma total
+      const somaTotal = parseFloat(escolhaValor) + somaCobertura + somaFrutas + somaComplementos + somaExtras;
+
 
         textoParaEnviar += `
-        *PEDIDO Nº:* ${numeroPedido} 😃😃😃
-        \n*PEDIDO LIDER AÇAÍ*
-        \n*PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
+        \n*PEDIDO Nº:* ${numeroPedido}
+        *PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         \n*ACOMPANHAMENTOS*
-        \n*COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}
-        \n*FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
-        \n*COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
-        \n*EXTRAS:*  \n${formatarObjetoParaString(escolhaExtras)}
-  
-   `;
-
-   numeroPedido++;
-        // CALCULO ---------------------------------
-        const somarArray = (array) => {
-          return array.filter((item) => item && typeof item === 'object' && 'valor' in item).reduce((acumulador, item) => acumulador + parseFloat(item.valor), 0);
-        };
-  
-        // Somar os valores de cada array
-        const somaCobertura = somarArray(escolhaCobertura);
-        const somaFrutas = somarArray(escolhaFrutas);
-        const somaComplementos = somarArray(escolhaComplementos);
-        const somaExtras = somarArray(escolhaExtras);
-  
-        // Calcular a soma total
-        const somaTotal = parseFloat(escolhaValor) + somaCobertura + somaFrutas + somaComplementos + somaExtras;
-  
-        // Construir o texto com os resultados
-        textoParaEnviar += `
-        ----------------------------------------
+        *COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}}
+        *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
+        *COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
+        *EXTRAS:*  \n${formatarObjetoParaString(escolhaExtras)}
+        _________________________________________________________________________________________
         \n*RESUMO TOTAL À PAGAR(R$)*
         *TAMANHO R$:* ${escolhaValor.toFixed(2)}
         *COBERTURA R$:* ${somaCobertura.toFixed(2)}
@@ -139,20 +131,37 @@ const enviarMensagemWhatsApp=()=> {
         *COMPLEMENTOS R$:* ${somaComplementos.toFixed(2)}
         *EXTRAS R$:* ${somaExtras.toFixed(2)}
         *VALOR TOTAL R$:* ${somaTotal.toFixed(2)}
-  `;
-  
+        _________________________________________________________________________________________  
+   `;
+
+   numeroPedido++;
         calcular(somaTotal)
       }
     }
+
+     //TRECHO PARA GERAR ENDEREÇO 
+     const endereco = JSON.parse(sessionStorage.getItem('endereco')) || {};
+     const retiradaProduto = sessionStorage.getItem('escolhaEntrega')
+   
+     const formaPagamento = sessionStorage.getItem('formaPagamento');
+     const valorTroco = sessionStorage.getItem('Vtroco');
+
+    textoParaEnviar += `
+      \n*VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
   
     
+    if (formaPagamento) {
+      textoParaEnviar += `
+      _________________________________________________________________________________________
+        \n*FORMA DE PAGAMENTO:* ${formaPagamento} 
+      `;
+    }
   
-  
-    const endereco = JSON.parse(sessionStorage.getItem('endereco')) || {};
-    const retiradaProduto = sessionStorage.getItem('escolhaEntrega')
-  
-    const formaPagamento = sessionStorage.getItem('formaPagamento');
-    const valorTroco = sessionStorage.getItem('Vtroco');
+    if (valorTroco) {
+      textoParaEnviar += `
+      *TROCO:* ${valorTroco}
+      `;
+    }
   
     // Verifica se o endereço foi preenchido
     const enderecoPreenchido = (endereco.nomeRua || endereco.numeroCasa || endereco.cep || endereco.cidade || endereco.bairro || endereco.referencia);
@@ -170,25 +179,8 @@ const enviarMensagemWhatsApp=()=> {
              `;
     }
   
-  textoParaEnviar += `
-  \n*VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
-
-  
-  if (formaPagamento) {
-    textoParaEnviar += `
-    ----------------------------------------
-      \n*FORMA DE PAGAMENTO:* ${formaPagamento} 
-    `;
-  }
-
-  if (valorTroco) {
-    textoParaEnviar += `
-    *TROCO:* ${valorTroco}
-    `;
-  }
-  
     textoParaEnviar += ` 
-    ----------------------------------------
+    _________________________________________________________________________________________
     \n\n*RETIRADA NO LOCAL*: ${retiradaProduto}`
   
     textoParaEnviar += `${enderecoTexto}`
