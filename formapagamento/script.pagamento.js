@@ -46,7 +46,6 @@ const FormaPagamento = () => {
     }
 
     document.querySelector("#Fpagamento").addEventListener("click", () => {
-      alert("Agradecemos pela confiança em nossos serviços. Volte sempre! :)")
         Troco()
         VerificarDados()
         FormaPagamento()
