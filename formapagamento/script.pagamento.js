@@ -58,8 +58,16 @@ document.addEventListener('DOMContentLoaded', FormaPagamento);
 
 
 
-
-
+  // Função para gerar um número aleatório entre 1 e 1000
+  const gerarNumeroAleatorio = () => {
+    return Math.floor(Math.random() * 1000) + 1;
+  };
+  
+  // Função para criar um pedido com um número aleatório
+  const criarPedido = () => {
+    return gerarNumeroAleatorio();
+  };
+  const numeroPedido = criarPedido();
 
 const enviarMensagemWhatsApp=()=> {
     let somaGeral = 0
@@ -200,15 +208,3 @@ const enviarMensagemWhatsApp=()=> {
     const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
     window.open(linkWhatsApp, '_blank');
   }
-
-  // Função para gerar um número aleatório entre 1 e 1000
-const gerarNumeroAleatorio = () => {
-  return Math.floor(Math.random() * 1000) + 1;
-};
-
-// Função para criar um pedido com um número aleatório
-const criarPedido = () => {
-  return gerarNumeroAleatorio();
-};
-
-const numeroPedido = criarPedido();
