@@ -105,9 +105,9 @@ const enviarMensagemWhatsApp=()=> {
 
   
         textoParaEnviar += `
-        *PEDIDO LIDER AÇAÍ*
+        *PEDIDO Nº:* ${numeroPedido}
+        \n*PEDIDO LIDER AÇAÍ*
         \n*PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
-        \n*PEDIDO Nº: ${numeroPedido}
         \n*ACOMPANHAMENTOS*
         \n*COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}
         \n*FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
