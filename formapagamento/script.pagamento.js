@@ -56,19 +56,6 @@ const FormaPagamento = () => {
 document.addEventListener('DOMContentLoaded', FormaPagamento);
 
 
-
-
-  // Função para gerar um número aleatório entre 1 e 1000
-  const gerarNumeroAleatorio = () => {
-    return Math.floor(Math.random() * 1000) + 1;
-  };
-  
-  // Função para criar um pedido com um número aleatório
-  const criarPedido = () => {
-    return gerarNumeroAleatorio();
-  };
-  const numeroPedido = criarPedido();
-
 const enviarMensagemWhatsApp=()=> {
     let somaGeral = 0
     let textoParaEnviar = '';
@@ -77,6 +64,9 @@ const enviarMensagemWhatsApp=()=> {
       somaGeral += somaTotal;
     };
     
+// Gere o número do pedido uma vez fora do loop
+const numeroPedidoBase = criarPedido();
+
     for (let i = 0; i < sessionStorage.length; i++) {
       const chaveProduto = `escolhaProduto_${i}`;
       const chaveValor = `escolhaProdutoValor_${i}`;
@@ -110,10 +100,10 @@ const enviarMensagemWhatsApp=()=> {
       function formatarEscolhas(escolhas) {
     return escolhas.map(formatarEscolha).join('\n');
   }
-
+  const numeroPedido = numeroPedidoBase + i;
   
         textoParaEnviar += `
-        *PEDIDO Nº:* ${numeroPedido + 1}
+        *PEDIDO Nº:* ${numeroPedido}
         \n*PEDIDO LIDER AÇAÍ*
         \n*PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         \n*ACOMPANHAMENTOS*
@@ -208,3 +198,16 @@ const enviarMensagemWhatsApp=()=> {
     const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
     window.open(linkWhatsApp, '_blank');
   }
+
+
+    // Função para gerar um número aleatório entre 1 e 1000
+    const gerarNumeroAleatorio = () => {
+      return Math.floor(Math.random() * 1000) + 1;
+    };
+    
+    // Função para criar um pedido com um número aleatório
+    const criarPedido = () => {
+      return gerarNumeroAleatorio();
+    };
+    const numeroPedido = criarPedido();
+  
