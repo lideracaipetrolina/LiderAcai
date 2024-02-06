@@ -87,6 +87,8 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
 
+    window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
+
 }
 
 let indiceProduto = sessionStorage.length;
