@@ -176,7 +176,7 @@ const enviarMensagemWhatsApp=()=> {
   
     textoParaEnviar += ` 
     ____________________________________
-    \*RETIRADA NO LOCAL*: ${retiradaProduto}`
+    *RETIRADA NO LOCAL*: ${retiradaProduto}`
   
     textoParaEnviar += `${enderecoTexto}`
   
