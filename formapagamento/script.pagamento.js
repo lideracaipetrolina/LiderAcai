@@ -126,7 +126,7 @@ const enviarMensagemWhatsApp=()=> {
         *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
         *COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
         *EXTRAS:*  \n${formatarObjetoParaString(escolhaExtras)} 
-        ____________________________________\n
+        ____________________________________
    `;
 
    numeroPedido++;
