@@ -141,15 +141,6 @@ const enviarMensagemWhatsApp=()=> {
      const formaPagamento = sessionStorage.getItem('formaPagamento');
      const valorTroco = sessionStorage.getItem('Vtroco');
  
-    
-      textoParaEnviar += `
-      *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}
-      \n*FORMA DE PAGAMENTO:* ${formaPagamento}
-      \n*TROCO:* R$ ${valorTroco} 
-      `;
-  
-  
-  
     // Verifica se o endereço foi preenchido
     const enderecoPreenchido = (endereco.nomeRua || endereco.numeroCasa || endereco.cep || endereco.cidade || endereco.bairro || endereco.referencia);
   
@@ -167,11 +158,12 @@ const enviarMensagemWhatsApp=()=> {
     }
   
     textoParaEnviar += ` 
-    ____________________________________
-    \n*RETIRADA NO LOCAL*: ${retiradaProduto}`
-  
-    textoParaEnviar += `${enderecoTexto}`
-  
+    *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}
+    *FORMA DE PAGAMENTO:* ${formaPagamento}
+    *TROCO:* R$ ${valorTroco} 
+    *RETIRADA NO LOCAL*: ${retiradaProduto}
+    ${enderecoTexto}
+    `
   
     const codigoPais = '55';
     const numeroTelefone = '87991793828';
