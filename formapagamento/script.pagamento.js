@@ -140,23 +140,15 @@ const enviarMensagemWhatsApp=()=> {
    
      const formaPagamento = sessionStorage.getItem('formaPagamento');
      const valorTroco = sessionStorage.getItem('Vtroco');
-
-    textoParaEnviar += `
-    *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
-  
+ 
     
-    if (formaPagamento) {
       textoParaEnviar += `
-      ____________________________________
-      \n*FORMA DE PAGAMENTO:* ${formaPagamento} 
+      *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}
+      \n*FORMA DE PAGAMENTO:* ${formaPagamento}
+      \n*TROCO:* R$ ${valorTroco} 
       `;
-    }
   
-    if (valorTroco) {
-      textoParaEnviar += `
-      \n*TROCO:* R$ ${valorTroco}
-      `;
-    }
+  
   
     // Verifica se o endereço foi preenchido
     const enderecoPreenchido = (endereco.nomeRua || endereco.numeroCasa || endereco.cep || endereco.cidade || endereco.bairro || endereco.referencia);
