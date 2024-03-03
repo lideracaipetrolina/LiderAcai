@@ -126,7 +126,7 @@ const enviarMensagemWhatsApp=()=> {
         *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
         *COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
         *EXTRAS:*  \n${formatarObjetoParaString(escolhaExtras)} 
-        ____________________________________
+        ____________________________________\n
    `;
 
    numeroPedido++;
@@ -142,7 +142,7 @@ const enviarMensagemWhatsApp=()=> {
      const valorTroco = sessionStorage.getItem('Vtroco');
 
     textoParaEnviar += `
-    \n*VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
+    *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
   
     
     if (formaPagamento) {
