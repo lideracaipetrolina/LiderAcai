@@ -153,8 +153,6 @@ const carrinhoCompras = () => {
         // Calcular a soma total
         const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
 
-        // Construir o texto com os resultados
-
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);
         botaMaisMenos(div, chaveQuantidade);

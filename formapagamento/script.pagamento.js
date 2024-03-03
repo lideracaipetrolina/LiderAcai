@@ -142,13 +142,13 @@ const enviarMensagemWhatsApp=()=> {
      const valorTroco = sessionStorage.getItem('Vtroco');
 
     textoParaEnviar += `
-      \n*VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
+      *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}`
   
     
     if (formaPagamento) {
       textoParaEnviar += `
       ____________________________________
-        \n*FORMA DE PAGAMENTO:* ${formaPagamento} 
+        *FORMA DE PAGAMENTO:* ${formaPagamento} 
       `;
     }
   
@@ -164,7 +164,7 @@ const enviarMensagemWhatsApp=()=> {
     let enderecoTexto = '';
     if (enderecoPreenchido) {
       enderecoTexto = `
-                 \n*ENDEREÇO PARA ENTREGA*
+                 *ENDEREÇO PARA ENTREGA*
                  *Nome da Rua:* ${endereco.nomeRua || 'Não fornecido'}
                  *Número da Casa/AP:* ${endereco.numeroCasa || 'Não fornecido'}
                  *CEP:* ${endereco.cep || 'Não fornecido'}
@@ -176,7 +176,7 @@ const enviarMensagemWhatsApp=()=> {
   
     textoParaEnviar += ` 
     ____________________________________
-    \n\n*RETIRADA NO LOCAL*: ${retiradaProduto}`
+    \*RETIRADA NO LOCAL*: ${retiradaProduto}`
   
     textoParaEnviar += `${enderecoTexto}`
   
