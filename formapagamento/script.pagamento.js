@@ -159,7 +159,7 @@ const enviarMensagemWhatsApp=()=> {
   
     textoParaEnviar += ` 
     *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}
-    *FORMA DE PAGAMENTO:* ${formaPagamento}
+    \n*FORMA DE PAGAMENTO:* ${formaPagamento}
     *TROCO:* R$ ${valorTroco} 
     *RETIRADA NO LOCAL*: ${retiradaProduto}
     ${enderecoTexto}
