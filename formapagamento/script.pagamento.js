@@ -158,12 +158,12 @@ const enviarMensagemWhatsApp=()=> {
     }
   
     textoParaEnviar += ` 
-    *VALOR GERAL:*  R$ ${somaGeral.toFixed(2)}
+    *VALOR GERAL:* R$ ${somaGeral.toFixed(2)}
     \n*FORMA DE PAGAMENTO:* ${formaPagamento}
-    *TROCO:* R$ ${valorTroco} 
-    *RETIRADA NO LOCAL*: ${retiradaProduto}
+    ${valorTroco ? `*TROCO:* R$ ${valorTroco}` : ''}
+    *RETIRADA NO LOCAL:* ${retiradaProduto}
     ${enderecoTexto}
-    `
+`;
   
     const codigoPais = '55';
     const numeroTelefone = '87991793828';
