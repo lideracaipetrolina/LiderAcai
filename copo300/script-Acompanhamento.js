@@ -144,7 +144,7 @@ const validacoes = () => {
         return false;
     }
     else if (escolhaExtras.length === 0) {
-        alert("Por favor, se não deseja nenhum EXTRA, escolha a OPÇÂO SEM EXTRA.");
+        alert("Por favor, se não deseja nenhum EXTRA, escolha a OPÇÃO SEM EXTRA.");
         return false;
     }
     
