@@ -108,22 +108,35 @@ const Armazenar_Mais_Menos = () => {
 //VALIDA SE A QUANTIDADE ESTÁ INSERIDA E DEPOIS ENVIA AO SESSIONSTORAGE
 const validacoes = () => {
     if (ValorDisplay1.value === "" || ValorDisplay1.value == 0) {
-        alert("Informe a quantidade!");
-    } else if (
-        escolhaCobertura.length > 1 ||
-        escolhaFrutas.length > 2 ||
-        escolhaComplementos.length > 4
-    ) {
-        alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida.");
+        alert("Por favor, Informe a quantidade!");
+    }  
+    else if (escolhaCobertura.length > 1) {
+        alert("Por favor, escolha apenas UMA OPÇÂO de COBERTURA.");
         return false;
     }
-
-    else if (
-        escolhaCobertura.length === 0 ||
-        escolhaFrutas.length === 0 ||
-        escolhaComplementos.length === 0
-    ) {
-        alert("Por favor, escolha ao menos uma seleção em cada categoria -> COBERTURA/FRUTAS/COMPLEMENTO.");
+    else if (escolhaFrutas.length > 2) {
+        alert("Por favor, escolha apenas DUAS OPÇÕES de FRUTAS.");
+        return false;
+    }
+    else if (escolhaComplementos.length > 4) {
+        alert("Por favor, escolha apenas QUATRO OPÇÕES de COMPLEMENTOS.");
+        return false;
+    }
+//----------------------------------------------------------------------
+    else if (escolhaCobertura.length === 0) {
+        alert("Por favor, escolha ao menos UMA OPÇÃO DE COBERTURA.");
+        return false;
+    }
+    else if (escolhaFrutas.length === 0) {
+        alert("Por favor, escolha ao menos UMA OPÇÃO DE FRUTAS.");
+        return false;
+    }
+    else if (escolhaComplementos.length === 0) {
+        alert("Por favor, escolha ao menos UMA OPÇÃO DE COMPLEMENTO.");
+        return false;
+    }
+    else if (escolhaExtras.length === 0) {
+        alert("Por favor, se não deseja nenhum EXTRA, escolha a OPÇÂO SEM EXTRA.");
         return false;
     }
 
