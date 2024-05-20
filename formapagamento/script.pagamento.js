@@ -124,7 +124,7 @@ const enviarMensagemWhatsApp=()=> {
         \n*PEDIDO Nº:* ${numeroPedido}
         *PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         *QUANTIDADE:* ${escolhaQuantidade}
-        \n*CREME:* ${formatarObjetoParaString(escolhaCreme)}
+        \n*CREME:* \n ${formatarObjetoParaString(escolhaCreme)}
         \n*ACOMPANHAMENTOS*
         *COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}
         *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
