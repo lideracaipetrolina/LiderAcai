@@ -12,6 +12,20 @@ let indiceExtras = sessionStorage.length;
 let indiceCremes = sessionStorage.length;
 
 function concluirPedido() {
+
+
+    const cremes = document.getElementsByName('cremes');
+    escolhaCremes = [];
+    for (let i = 0; i < cremes.length; i++) {
+        if (cremes[i].checked) {
+            const creme = {
+                texto: cremes[i].getAttribute('data-text'),
+                valor: cremes[i].value
+            };
+            escolhaCremes.push(creme);
+        }
+    }
+
     const cobertura = document.getElementsByName('cobertura');
     escolhaCobertura = [];
     for (let i = 0; i < cobertura.length; i++) {

@@ -18,11 +18,11 @@ function concluirPedido() {
     escolhaCremes = [];
     for (let i = 0; i < cremes.length; i++) {
         if (cremes[i].checked) {
-            const cremes = {
+            const creme = {
                 texto: cremes[i].getAttribute('data-text'),
                 valor: cremes[i].value
             };
-            escolhaCremes.push(cremes);
+            escolhaCremes.push(creme);
         }
     }
 
