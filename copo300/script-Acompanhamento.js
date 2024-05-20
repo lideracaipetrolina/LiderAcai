@@ -3,6 +3,7 @@ let escolhaCobertura = [];
 let escolhaFrutas = [];
 let escolhaComplementos = [];
 let escolhaExtras = [];
+let escolhaCremes = [];
 
 let indiceCobertura = sessionStorage.length;
 let indiceFrutas = sessionStorage.length;
@@ -12,6 +13,20 @@ let indiceExtras = sessionStorage.length;
 
 
 function concluirPedido() {
+
+    const cremes = document.getElementsByName('cremes');
+    escolhaCremes = [];
+    for (let i = 0; i < cremes.length; i++) {
+        if (cremes[i].checked) {
+            const cremes = {
+                texto: cremes[i].getAttribute('data-text'),
+                valor: cremes[i].value
+            };
+            escolhaCremes.push(cremes);
+        }
+    }
+
+
     const cobertura = document.getElementsByName('cobertura');
     escolhaCobertura = [];
     for (let i = 0; i < cobertura.length; i++) {
