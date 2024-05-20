@@ -121,8 +121,8 @@ const validacoes = () => {
         alert("Por favor, escolha apenas DUAS OPÇÕES de FRUTAS.");
         return false;
     }
-    else if (escolhaComplementos.length > 5) {
-        alert("Por favor, escolha apenas CINCO OPÇÕES de COMPLEMENTOS.");
+    else if (escolhaComplementos.length > 4) {
+        alert("Por favor, escolha apenas QUATRO OPÇÕES de COMPLEMENTOS.");
         return false;
     }
 //----------------------------------------------------------------------
