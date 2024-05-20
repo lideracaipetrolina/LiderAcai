@@ -3,13 +3,29 @@ let escolhaCobertura = [];
 let escolhaFrutas = [];
 let escolhaComplementos = [];
 let escolhaExtras = [];
+let escolhaCremes = [];
 
 let indiceCobertura = sessionStorage.length;
 let indiceFrutas = sessionStorage.length;
 let indiceComplementos = sessionStorage.length;
 let indiceExtras = sessionStorage.length;
+let indiceCremes = sessionStorage.length;
+
 
 function concluirPedido() {
+
+    const cremes = document.getElementsByName('cremes');
+    escolhaCremes = [];
+    for (let i = 0; i < cremes.length; i++) {
+        if (cremes[i].checked) {
+            const cremes = {
+                texto: cremes[i].getAttribute('data-text'),
+                valor: cremes[i].value
+            };
+            escolhaCremes.push(cremes);
+        }
+    }
+
     const cobertura = document.getElementsByName('cobertura');
     escolhaCobertura = [];
     for (let i = 0; i < cobertura.length; i++) {
@@ -62,12 +78,17 @@ function concluirPedido() {
     let OpcaoFruta = `escolhaFruta_${indiceFrutas}`;
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
     let OpcaoExtras = `escolhaExtras_${indiceExtras}`;
+    let OpcaoCremes = `escolhaCremes_${indiceCremes}`
 
     // Armazenar no sessionStorage
+
+
     sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
+    sessionStorage.setItem(OpcaoCremes, JSON.stringify(escolhaCremes))
+
 }
 
 
@@ -107,10 +128,10 @@ const Armazenar_Mais_Menos = () => {
 
 //VALIDA SE A QUANTIDADE ESTÁ INSERIDA E DEPOIS ENVIA AO SESSIONSTORAGE
 const validacoes = () => {
-   
+
     if (ValorDisplay1.value === "" || ValorDisplay1.value == 0) {
         alert("Por favor, Informe a quantidade!");
-    }  
+    }
     else if (escolhaCobertura.length > 1) {
         alert("Por favor, escolha apenas UMA OPÇÂO de COBERTURA.");
         return false;
@@ -123,7 +144,7 @@ const validacoes = () => {
         alert("Por favor, escolha apenas QUATRO OPÇÕES de COMPLEMENTOS.");
         return false;
     }
-//----------------------------------------------------------------------
+    //----------------------------------------------------------------------
     else if (escolhaCobertura.length === 0) {
         alert("Por favor, escolha ao menos UMA OPÇÃO DE COBERTURA.");
         return false;
@@ -140,7 +161,10 @@ const validacoes = () => {
         alert("Por favor, se não deseja nenhum EXTRA, escolha a OPÇÃO SEM EXTRA.");
         return false;
     }
-
+    else if (escolhaCremes.length === 0) {
+        alert("Por favor, escolha ao menos UMA OPÇÃO DE CREME.");
+        return false;
+    }
     else {
         //location.reload();
         Armazenar_Mais_Menos();

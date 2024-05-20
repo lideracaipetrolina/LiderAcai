@@ -9,6 +9,7 @@ let indiceCobertura = sessionStorage.length;
 let indiceFrutas = sessionStorage.length;
 let indiceComplementos = sessionStorage.length;
 let indiceExtras = sessionStorage.length;
+let indiceCremes = sessionStorage.length;
 
 
 
@@ -75,13 +76,14 @@ function concluirPedido() {
         }
     }
 
-   
+
 
 
     let OpcaoCobertura = `escolhaCobertura_${indiceCobertura}`;
     let OpcaoFruta = `escolhaFruta_${indiceFrutas}`;
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
     let OpcaoExtras = `escolhaExtras_${indiceExtras}`;
+    let OpcaoCremes = `escolhaCremes_${indiceCremes}`
 
     // Armazenar no sessionStorage
 
@@ -90,6 +92,7 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
+    sessionStorage.setItem(OpcaoCremes, JSON.stringify(escolhaCremes));
 }
 
 
@@ -132,7 +135,7 @@ const Armazenar_Mais_Menos = () => {
 const validacoes = () => {
     if (ValorDisplay1.value === "" || ValorDisplay1.value == 0) {
         alert("Por favor, Informe a quantidade!");
-    }  
+    }
     else if (escolhaCobertura.length > 1) {
         alert("Por favor, escolha apenas UMA OPÇÂO de COBERTURA.");
         return false;
@@ -145,7 +148,7 @@ const validacoes = () => {
         alert("Por favor, escolha apenas TRÊS OPÇÕES de COMPLEMENTOS.");
         return false;
     }
-//----------------------------------------------------------------------
+    //----------------------------------------------------------------------
     else if (escolhaCobertura.length === 0) {
         alert("Por favor, escolha ao menos UMA OPÇÃO DE COBERTURA.");
         return false;
@@ -162,13 +165,17 @@ const validacoes = () => {
         alert("Por favor, se não deseja nenhum EXTRA, escolha a OPÇÃO SEM EXTRA.");
         return false;
     }
-    
+    else if (escolhaCremes.length === 0) {
+        alert("Por favor, escolha ao menos UMA OPÇÃO DE CREME.");
+        return false;
+    }
+
     else {
-         //location.reload();
+        //location.reload();
         Armazenar_Mais_Menos();
-         // Redirecionar para a próxima página
-    window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
-    //window.location.href = '../aRESUMO/pagina-Resumo.html';
+        // Redirecionar para a próxima página
+        window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
+        //window.location.href = '../aRESUMO/pagina-Resumo.html';
     }
 
 }
