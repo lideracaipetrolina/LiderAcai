@@ -96,7 +96,7 @@ const carrinhoCompras = () => {
       const chaveFruta = `escolhaFruta_${i}`;
       const chaveComplemento = `escolhaComplemento_${i}`;
       const chaveExtra = `escolhaExtras_${i}`;
-      const chaveCreme = `escolhaProduto_${i}`;
+      const chaveCreme = `escolhaCremes_${i}`;
 
       const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
       const escolhaProduto = sessionStorage.getItem(chaveProduto);

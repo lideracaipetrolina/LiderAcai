@@ -75,6 +75,7 @@ const enviarMensagemWhatsApp=()=> {
       const chaveFruta = `escolhaFruta_${i}`;
       const chaveComplemento = `escolhaComplemento_${i}`;
       const chaveExtra = `escolhaExtras_${i}`;
+      const chaveCreme = `escolhaCremes_${i}`;
   
       const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
       const escolhaProduto = sessionStorage.getItem(chaveProduto);
@@ -83,7 +84,8 @@ const enviarMensagemWhatsApp=()=> {
       const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || [];
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
       const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
-  
+      const escolhaCreme = JSON.parse(sessionStorage.getItem(chaveCreme)) || [];
+
   
       if (escolhaProduto && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
@@ -108,19 +110,21 @@ const enviarMensagemWhatsApp=()=> {
       };
 
       // Somar os valores de cada array
+      const somaCreme = somarArray(escolhaCreme);
       const somaCobertura = somarArray(escolhaCobertura);
       const somaFrutas = somarArray(escolhaFrutas);
       const somaComplementos = somarArray(escolhaComplementos);
       const somaExtras = somarArray(escolhaExtras);
 
       // Calcular a soma total
-      const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
+      const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras + somaCreme);
 
 
         textoParaEnviar += `
         \n*PEDIDO Nº:* ${numeroPedido}
         *PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
         *QUANTIDADE:* ${escolhaQuantidade}
+        \n*CREME:* ${escolhaCreme}
         \n*ACOMPANHAMENTOS*
         *COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}
         *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
