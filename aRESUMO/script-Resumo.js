@@ -96,6 +96,7 @@ const carrinhoCompras = () => {
       const chaveFruta = `escolhaFruta_${i}`;
       const chaveComplemento = `escolhaComplemento_${i}`;
       const chaveExtra = `escolhaExtras_${i}`;
+      const chaveCreme = `escolhaProduto_${i}`;
 
       const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
       const escolhaProduto = sessionStorage.getItem(chaveProduto);
@@ -104,8 +105,9 @@ const carrinhoCompras = () => {
       const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || [];
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
       const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
+      const escolhaCreme = JSON.parse(sessionStorage.getItem(chaveCreme)) || [];
 
-      if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
+      if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaCreme && escolhaExtras && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
 
@@ -133,6 +135,7 @@ const carrinhoCompras = () => {
  <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>&#127826;${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
  <br><br>-> QUANTIDADE:
  <br><br>
+ <br><br><span style="font-weight: bold;">&#127860; CREME:</span> <br> ${formatarObjetoParaString(escolhaCreme)}
  <br><br><span style="font-weight: bold;"> ACOMPANHAMENTOS</span>
    <br><br><span style="font-weight: bold;">&#127860; COBERTURA:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
    <br><br><span style="font-weight: bold;">&#127860; FRUTAS:</span> <br> ${formatarObjetoParaString(escolhaFrutas)}
@@ -145,13 +148,14 @@ const carrinhoCompras = () => {
         };
 
         // Somar os valores de cada array
+        const somaCreme = somarArray(escolhaCreme);
         const somaCobertura = somarArray(escolhaCobertura);
         const somaFrutas = somarArray(escolhaFrutas);
         const somaComplementos = somarArray(escolhaComplementos);
         const somaExtras = somarArray(escolhaExtras);
 
         // Calcular a soma total
-        const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
+        const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras + somaCreme);
 
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);
