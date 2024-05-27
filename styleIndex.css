@@ -35,8 +35,8 @@ body {
 
 .imagem {
     margin-bottom: 20px;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 200px;
     box-shadow: 0px 0px 0px 2px rgb(107, 4, 107);
 }
